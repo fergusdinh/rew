@@ -1,0 +1,17 @@
+<?php
+$refer_id = $this->getRequest()->getParam("refer");
+$refer_code = $this->getRequest()->getParam("refercode");
+$refer_code = $block->escapeHtmlAttr($refer_code);
+
+if(!$refer_id && !$refer_code){
+    $helper = $this->helper("Lof\RewardPointsBehavior\Helper\Data");
+    $coreSession = $helper->getCoreSession();
+    $coreSession->start();
+    $refer_id = $coreSession->getRefer();
+    $refer_code = $coreSession->getReferCode();
+}
+?>
+<input type="hidden" name="rw_refer_code" id="rw_refer_code" value="<?php echo $refer_code; ?>"
+                   title="<?= $block->escapeHtmlAttr(__('Refer Code')) ?>" class="input-text" autocomplete="off" readonly>
+<input type="hidden" name="rw_refer_id" id="rw_refer_id" value="<?php echo $refer_id; ?>"
+                   title="<?= $block->escapeHtmlAttr(__('Refer Id')) ?>" class="input-text" autocomplete="off" readonly>

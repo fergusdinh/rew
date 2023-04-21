@@ -1,0 +1,16 @@
+<!--@subject Your balance at {{var store.getFrontendName()}} has been updated@-->
+
+{{template config_path="design/email/header_template"}}
+
+{{depend message}}
+    {{var message|raw}}
+{{/depend}}
+{{depend no_message}}
+    <p>Dear Mate,</p>
+	<p>You have received <b>{{var transaction_amount}}</b> for order <b>{{var order_id}}</b>. Please login the website and insert the following code {{var coupon_code}} to get {{var transaction_amount}}</p>
+    <br/>
+    Thank you,<br/>
+    <strong>{{var store.getFrontendName()}}</strong>
+{{/depend}}
+
+{{template config_path="design/email/footer_template"}}

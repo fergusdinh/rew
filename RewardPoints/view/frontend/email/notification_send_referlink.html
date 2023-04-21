@@ -1,0 +1,7 @@
+<!--@subject {{var data.title}}@-->
+{{template config_path="design/email/header_template"}}
+<p>Dear {{var data.name}},</p>
+<p>{{var data.text}},</p>
+<p><a href="{{var data.referlink}}">{{var data.referlink}}</a></p>
+<strong>{{trans "%store_name." store_name=$store.getFrontendName()}}</strong>
+{{template config_path="design/email/footer_template"}}

@@ -1,0 +1,13 @@
+<?php
+$rewardsData     = $this->helper('Lof\RewardPoints\Helper\Data');
+$rewardsCustomer = $block->getRewardCustomer();
+?>
+<div class="block block-dashboard-info">
+	<div class="block-title"><strong><?php echo __('Reward Information') ?></strong></div>
+	<div class="block-content">
+		<strong><?php echo __('Your balance is %1', $rewardsData->formatPoints($rewardsCustomer->getTotalPoints(), true, true)); ?></strong>
+	</div>
+	<div class="box-actions">
+	<a class="action edit" href="<?php echo $rewardsData->getRewardsUrl(); ?>"><span><?php echo __('View'); ?></span></a>
+	</div>
+</div>

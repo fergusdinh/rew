@@ -1,0 +1,29 @@
+<script>
+	require([
+		"Magento_Rule/rules",
+		"prototype",
+		"jquery"
+		], function(VarienRulesForm, prototype, $){
+			var checkBoxes = [];
+			rewardsCallBack = function(grid, element, checked) {
+				if (checked) {
+					if(parseInt(element.value)) {
+						var index = checkBoxes.indexOf(parseInt(element.value));
+						if(index == -1) {
+							checkBoxes.push(parseInt(element.value));
+						}
+					}
+				} else {
+					var index = checkBoxes.indexOf(parseInt(element.value));
+					for (var i = 0; i <= checkBoxes.length; i++) {
+						if(checkBoxes[i] == parseInt(element.value)) {
+							checkBoxes.splice( i, 1 );
+						}
+					}
+				}
+				$('#customerids').val('');
+				$('#customerids').val(checkBoxes.join());
+			}
+			window.edit_form = new VarienRulesForm('edit_form');
+		});
+	</script>

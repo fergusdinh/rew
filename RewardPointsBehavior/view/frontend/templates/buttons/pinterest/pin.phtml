@@ -1,0 +1,12 @@
+<?php
+$rewardsCustomer = $this->helper('\Lof\RewardPoints\Helper\Customer');
+$url = $block->getProductImage();
+if($url) $url .= '&';
+$url .= $block->getProductDescription();
+?>
+<div class="lrw-social-button lrw-pinterest-pin">
+	<a data-pin-do="buttonBookmark" class="social pinterest" href="https://www.pinterest.com/pin/create/button?url=<?= $block->getEncodedPageUrl() ?>&<?php echo $url ?>"></a>
+	<script>
+		var rewardsPinUrl = '<?= $block->getPinUrl(); ?>';
+	</script>
+</div>

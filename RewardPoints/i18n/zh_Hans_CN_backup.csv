@@ -1,0 +1,415 @@
+"Reward Points Information","Reward Points Information"
+"Available Points","Available Points"
+"Spent Points","Spent Points"
+"Update Points Notification","Update Points Notification"
+"Expire Points Notification","Expire Points Notification"
+"Transaction History","Transaction History"
+Points,Points
+"Add or subtract customer's balance. For ex: 50 or -50 points.","Add or subtract customer's balance. For ex: 50 or -50 points."
+"Transaction Title","Transaction Title"
+"Scheduled At","Scheduled At"
+"Select a date time to apply this transaction.","Select a date time to apply this transaction."
+"Expires At","Expires At"
+"If empty or zero, there is no limitation.","If empty or zero, there is no limitation."
+"Message for customer notification email","Message for customer notification email"
+"<strong>You can use the following variables:</strong><br/>
+                    {{var customer.name}} - customer name<br/>
+                    {{var customer.totalpoints}} - customer total points<br/>
+                    {{store url =""""}} - store URL<br/>
+                    {{var store.getFrontendName()}} - store name<br/>
+                    {{var transaction_amount}} - formatted amount of current transaction (e.g 10 Rewards Points)<br/>
+                    {{var balance_total}} - formatted balance of customer account (e.g. 100 Rewards Points)<br/>
+                    Leave empty to use default notification email.<br/><br/><strong>Example:</strong><br/>
+                    Dear {{var customer.name}},<br>
+                    <p>Your account balance has been updated at <a href=""{{store url=""""}}"">{{var store.getFrontendName()}}</a>. </p>
+                    Balance Update: <b>{{var transaction_amount}}</b><br>
+                    Message: {{var transaction_comment}}<br>
+                    Balance Total: <b>{{var balance_total}}</b><br>
+                    <br>
+                    Thank you,<br>
+                    <strong>{{var store.getFrontendName()}}</strong>","<strong>You can use the following variables:</strong><br/>
+                    {{var customer.name}} - customer name<br/>
+                    {{var customer.totalpoints}} - customer total points<br/>
+                    {{store url =""""}} - store URL<br/>
+                    {{var store.getFrontendName()}} - store name<br/>
+                    {{var transaction_amount}} - formatted amount of current transaction (e.g 10 Rewards Points)<br/>
+                    {{var balance_total}} - formatted balance of customer account (e.g. 100 Rewards Points)<br/>
+                    Leave empty to use default notification email.<br/><br/><strong>Example:</strong><br/>
+                    Dear {{var customer.name}},<br>
+                    <p>Your account balance has been updated at <a href=""{{store url=""""}}"">{{var store.getFrontendName()}}</a>. </p>
+                    Balance Update: <b>{{var transaction_amount}}</b><br>
+                    Message: {{var transaction_comment}}<br>
+                    Balance Total: <b>{{var balance_total}}</b><br>
+                    <br>
+                    Thank you,<br>
+                    <strong>{{var store.getFrontendName()}}</strong>"
+"Reward Points","Reward Points"
+ID,ID
+Name,Name
+Email,Email
+"Balance Points","Balance Points"
+Group,Group
+Telephone,Telephone
+ZIP,ZIP
+Country,Country
+State/Province,State/Province
+"Customer Since","Customer Since"
+Website,Website
+"Save and Duplicate","Save and Duplicate"
+"Save Rate","Save Rate"
+"Save and Continue Edit","Save and Continue Edit"
+Delete,Delete
+"Edit Rule '%1'","Edit Rule '%1'"
+"New Rule","New Rule"
+Actions,Actions
+Action,Action
+"Points (X)","Points (X)"
+"How many points customers will receive when the rule is performed.","How many points customers will receive when the rule is performed."
+"Money Step (Y)","Money Step (Y)"
+"Sets the number of products represented by ""X"".","Sets the number of products represented by ""X""."
+"<span style=""font-size: 1.4rem; font-weight: bold"">[' . . ']</span>","<span style=""font-size: 1.4rem; font-weight: bold"">[' . . ']</span>"
+"Maximum Points Earned","Maximum Points Earned"
+"Set the maximum number of points earned for each product. Leave empty to disable","Set the maximum number of points earned for each product. Leave empty to disable"
+"Stop Further Rules Processing","Stop Further Rules Processing"
+"Determines if additional rules can be applied to this purchase. To prevent multiple discounts from being applied to the same purchase, select ""Yes.""","Determines if additional rules can be applied to this purchase. To prevent multiple discounts from being applied to the same purchase, select ""Yes."""
+No,No
+Yes,Yes
+"General Information","General Information"
+"Rule Name","Rule Name"
+"This field will be displayed in the list of rules.","This field will be displayed in the list of rules."
+Description,Description
+"A description of the rule should include the purpose of the rule, and explain how it is used.","A description of the rule should include the purpose of the rule, and explain how it is used."
+From,From
+To,To
+"Customer Groups","Customer Groups"
+"Identifies the customer groups to which the rule applies.","Identifies the customer groups to which the rule applies."
+Priority,Priority
+"A number that indicates the priority of this rule in relation to others. The highest priority is number 0.","A number that indicates the priority of this rule in relation to others. The highest priority is number 0."
+Status,Status
+"Determines if the rule is currently active in the store.","Determines if the rule is currently active in the store."
+"Earning Information","Earning Information"
+General,General
+"Save Product Points","Save Product Points"
+"Add Transaction","Add Transaction"
+"Number Points","Number Points"
+"Name in %1","Name in %1"
+Type,Type
+"Attribute Set","Attribute Set"
+SKU,SKU
+Price,Price
+Visibility,Visibility
+"Earning Points","Earning Points"
+"Are you sure you want to do this?","Are you sure you want to do this?"
+"Mail Log #%1","Mail Log #%1"
+Trigger,Trigger
+"Transaction ID","Transaction ID"
+"Sender Name","Sender Name"
+"Sender Email","Sender Email"
+"Recipient Name","Recipient Name"
+"Recipient Email","Recipient Email"
+Subject,Subject
+Message,Message
+Bug,Bug
+"Sent At","Sent At"
+"[STORE VIEW]","[STORE VIEW]"
+[GLOBAL],[GLOBAL]
+[WEBSITE],[WEBSITE]
+Empty,Empty
+"Earned %1","Earned %1"
+"Spent %1","Spent %1"
+"Use %1","Use %1"
+"%1 need to earn more %1 to use this rule.","%1 need to earn more %1 to use this rule."
+"X points","X points"
+"Y amount","Y amount"
+"Spend Minimum","Spend Minimum"
+"Spend Maximum","Spend Maximum"
+"Stop further rules processing","Stop further rules processing"
+"Spending Information","Spending Information"
+Cancel,Cancel
+"For ex: 10 or -10 points.","For ex: 10 or -10 points."
+"<strong>You can use the following variables:</strong><br/>
+                    {{var customer.name}} - customer name<br/>
+                    {{var customer.totalpoints}} - customer total points<br/>
+                    {{store url =""""}} - store URL<br/>
+                    {{var store.getFrontendName()}} - store name<br/>
+                    {{var transaction_amount}} - formatted amount of current transaction (e.g 10 Rewards Points)<br/>
+                    {{var balance_total}} - formatted balance of customer account (e.g. 100 Rewards Points)<br/>
+                    Leave empty to use default notification email.<br/><br/><strong>Example:</strong><br/>
+                    Dear {{var customer.name}},<br>
+                    <p>Your account balance has been updated at <a href=""{{store url=""""}}"">{{var store.getFrontendName()}}</a>. </p>
+                    Balance Update: <b>{{var transaction_amount}}</b><br>
+                    Message: {{var transaction_comment}}<br>
+                    Balance Total: <b>{{var balance_total}}</b><br>
+                    <br>
+                    Thank you,<br>
+                    <strong>{{var store.getFrontendName()}}</strong>","<strong>You can use the following variables:</strong><br/>
+                    {{var customer.name}} - customer name<br/>
+                    {{var customer.totalpoints}} - customer total points<br/>
+                    {{store url =""""}} - store URL<br/>
+                    {{var store.getFrontendName()}} - store name<br/>
+                    {{var transaction_amount}} - formatted amount of current transaction (e.g 10 Rewards Points)<br/>
+                    {{var balance_total}} - formatted balance of customer account (e.g. 100 Rewards Points)<br/>
+                    Leave empty to use default notification email.<br/><br/><strong>Example:</strong><br/>
+                    Dear {{var customer.name}},<br>
+                    <p>Your account balance has been updated at <a href=""{{store url=""""}}"">{{var store.getFrontendName()}}</a>. </p>
+                    Balance Update: <b>{{var transaction_amount}}</b><br>
+                    Message: {{var transaction_comment}}<br>
+                    Balance Total: <b>{{var balance_total}}</b><br>
+                    <br>
+                    Thank you,<br>
+                    <strong>{{var store.getFrontendName()}}</strong>"
+Title,Title
+"Points Used","Points Used"
+"Created At","Created At"
+view,view
+CSV,CSV
+"Excel XML","Excel XML"
+"<a href=""%1"">View</a>","<a href=""%1"">View</a>"
+"Transaction #%1","Transaction #%1"
+"Customer Email","Customer Email"
+"<a href=""%1"">%2</a>","<a href=""%1"">%2</a>"
+"%1 Used","%1 Used"
+"Updated At","Updated At"
+"Store View","Store View"
+"Admin User","Admin User"
+"Checkout now and earn <strong>%1</strong> for this order","Checkout now and earn <strong>%1</strong> for this order"
+"You need to earn more %1 to use this rule. Please click <a href=""%2"">here</a> to learn about it.","You need to earn more %1 to use this rule. Please click <a href=""%2"">here</a> to learn about it."
+"My Reward ","My Reward "
+"You Earned","You Earned"
+"You Spent","You Spent"
+"Reward Customers","Reward Customers"
+"You deleted the rate.","You deleted the rate."
+"We can't find a rate to delete.","We can't find a rate to delete."
+"This rate no longer exists.","This rate no longer exists."
+"Edit Rate","Edit Rate"
+"New Rate","New Rate"
+"Earning Rate","Earning Rate"
+"Earning Rates","Earning Rates"
+"A total of %1 record(s) have been deleted.","A total of %1 record(s) have been deleted."
+"Product Earning Points","Product Earning Points"
+"Something went wrong while change product points.","Something went wrong while change product points."
+"The wrong earning rule is specified.","The wrong earning rule is specified."
+"You s
+                    aved the rate.","You s
+                    aved the rate."
+"You duplicated this rate.","You duplicated this rate."
+"Something went wrong while duplicating the rate.","Something went wrong while duplicating the rate."
+"BUGS2: %1","BUGS2: %1"
+"Something went wrong while saving the rate data. Please review the error log.","Something went wrong while saving the rate data. Please review the error log."
+"The mail log has been deleted.","The mail log has been deleted."
+"We can't find a mail log to delete.","We can't find a mail log to delete."
+"The mail log log no longer exists.","The mail log log no longer exists."
+"Mail Log","Mail Log"
+"Mail Logs","Mail Logs"
+"Mail Log Information","Mail Log Information"
+"Local time: %1 at %2","Local time: %1 at %2"
+"You created the order.","You created the order."
+"Order saving error: %1","Order saving error: %1"
+"Edit Rule","Edit Rule"
+"Spending Rate","Spending Rate"
+"Spending Rates","Spending Rates"
+"Spending Product Points","Spending Product Points"
+"Something went wrong while changing product points.","Something went wrong while changing product points."
+"The wrong spending rate is specified.","The wrong spending rate is specified."
+"You saved the rate.","You saved the rate."
+"BUGS1: %1","BUGS1: %1"
+"Account points is not enough points to delete the transaction.","Account points is not enough points to delete the transaction."
+"Admin delete the transaction #%1","Admin delete the transaction #%1"
+"Admin cancel the transaction #%1","Admin cancel the transaction #%1"
+"You deleted the transaction.","You deleted the transaction."
+"We can't find a transaction to delete.","We can't find a transaction to delete."
+"The transaction no longer exists.","The transaction no longer exists."
+"View Transaction","View Transaction"
+"Transaction Information","Transaction Information"
+Transactions,Transactions
+"[ID: %1] Account points is not enough points to delete transaction","[ID: %1] Account points is not enough points to delete transaction"
+"BUGS 1: %1","BUGS 1: %1"
+"Add New Transaction","Add New Transaction"
+"Account points is not enough points to cancel the transaction.","Account points is not enough points to cancel the transaction."
+"Transaction has been canceled successfully.","Transaction has been canceled successfully."
+"Data is not valid. Cannot create transaction.","Data is not valid. Cannot create transaction."
+"Expires Date must follow Today Date.","Expires Date must follow Today Date."
+"Apply Date must follow Today Date.","Apply Date must follow Today Date."
+"Expires Date must follow Apply Date.","Expires Date must follow Apply Date."
+"[Customer ID: %1] Account points is not enough points to create a transaction.","[Customer ID: %1] Account points is not enough points to create a transaction."
+"The transaction was successfully saved.","The transaction was successfully saved."
+"There were %1 transactions successfully saved.","There were %1 transactions successfully saved."
+"There were %1 customer balance were not enough to create a transaction.","There were %1 customer balance were not enough to create a transaction."
+"Please select a customer for the transaction","Please select a customer for the transaction"
+"The rule has been successfully removed.","The rule has been successfully removed."
+"You used reward code ""%1"".","You used reward code ""%1""."
+"The reward code ""%1"" is not valid.","The reward code ""%1"" is not valid."
+"Your settings has been updated successfully.","Your settings has been updated successfully."
+"'BUGS4:' .","'BUGS4:' ."
+"'BUGS3:' .","'BUGS3:' ."
+"Give %1 points for each %2","Give %1 points for each %2"
+"Give %1 points as orginal price","Give %1 points as orginal price"
+"Give %1% points of orginal price","Give %1% points of orginal price"
+"Give %1% points of cart total","Give %1% points of cart total"
+"Give %1 points for every %2 qty","Give %1 points for every %2 qty"
+"Give %1 points to customer","Give %1 points to customer"
+"Earned %1 for the order #%2","Earned %1 for the order #%2"
+"Spent %1 for the order #%2","Spent %1 for the order #%2"
+"You spent %1 for the order #%2","You spent %1 for the order #%2"
+"You earned %1 for the order #%2","You earned %1 for the order #%2"
+"Cancel %1 for the order #%2","Cancel %1 for the order #%2"
+"Cancel %1 for the order #%2.","Cancel %1 for the order #%2."
+"Cancel spent %1 for the order #%2","Cancel spent %1 for the order #%2"
+"Cancel spent %1 for the order #%2.","Cancel spent %1 for the order #%2."
+"For %1 points give %2 discount","For %1 points give %2 discount"
+"You don't have enough points to buy more quantiy of %1.","You don't have enough points to buy more quantiy of %1."
+"This product can be purchased by points only. Need more points to get it.","This product can be purchased by points only. Need more points to get it."
+"<img src=""%1"" alt=""Reward Points""/>","<img src=""%1"" alt=""Reward Points""/>"
+"The product does not exist.","The product does not exist."
+"You don't have enough points to buy more quantiy.","You don't have enough points to buy more quantiy."
+"You need to earn more %1 to use this rule. Please click <a target=""_blank"" href=""%2"">here</a> to learn about it.","You need to earn more %1 to use this rule. Please click <a target=""_blank"" href=""%2"">here</a> to learn about it."
+Normal,Normal
+"Rounding Down","Rounding Down"
+"Rounding Up","Rounding Up"
+"Bugs5: Total Points is bigger than spend points","Bugs5: Total Points is bigger than spend points"
+"Give X points to customer","Give X points to customer"
+"Give X points for every spent Y","Give X points for every spent Y"
+"Give X points as product final price","Give X points as product final price"
+"Give X% points of orginal price","Give X% points of orginal price"
+Active,Active
+Inactive,Inactive
+"End Date must follow Start Date.","End Date must follow Start Date."
+"Balance update","Balance update"
+"Points expire","Points expire"
+"Points expired","Points expired"
+"Earn Points","Earn Points"
+"Spend Points","Spend Points"
+"Cancel Earned Points","Cancel Earned Points"
+"Cancel Spent Points","Cancel Spent Points"
+"Apply Reward Code","Apply Reward Code"
+"Rewards Discount","Rewards Discount"
+"Earn %1","Earn %1"
+"Earning Points...","Earning Points..."
+"Spend %1","Spend %1"
+"Spending Points...","Spending Points..."
+"-- Please Select --","-- Please Select --"
+"Customer total points is smaller than avaiable points","Customer total points is smaller than avaiable points"
+"Discount X points for every spent Y","Discount X points for every spent Y"
+"- Plesase Select -","- Plesase Select -"
+New,New
+Processing,Processing
+Complete,Complete
+Closed,Closed
+Canceled,Canceled
+Holded,Holded
+Failed,Failed
+Expired,Expired
+"Earn points for purchasing order","Earn points for purchasing order"
+"Retrive points for refunding order","Retrive points for refunding order"
+"Retrive points for canceling order","Retrive points for canceling order"
+"Retrive points for closing order","Retrive points for closing order"
+"Spend points to purchase order","Spend points to purchase order"
+"Retrive spent points on refunded order","Retrive spent points on refunded order"
+"Retrive spent points on canceled order","Retrive spent points on canceled order"
+"Retrive spent points on cloded order","Retrive spent points on cloded order"
+"Changed By Admin","Changed By Admin"
+"Receive point for subscribing to newsletter","Receive point for subscribing to newsletter"
+"Receive point for registering successfully","Receive point for registering successfully"
+"Receive point for logging in successfully","Receive point for logging in successfully"
+"Receive points for Facebook like","Receive points for Facebook like"
+"Receive point for sharing via Facebook","Receive point for sharing via Facebook"
+"Receive point for +1 via Google","Receive point for +1 via Google"
+"Receive points pin via Pinterest","Receive points pin via Pinterest"
+"Receive points for birthday","Receive points for birthday"
+"Receive point for reviewing a product","Receive point for reviewing a product"
+"Recieve point for tweeting via Twitter","Recieve point for tweeting via Twitter"
+"Account points is not enough to create a transaction.","Account points is not enough to create a transaction."
+"Transaction was successfully saved","Transaction was successfully saved"
+"You earned %1 and spent %2 for the order #%3.","You earned %1 and spent %2 for the order #%3."
+"You earned %1 for the order #%2.","You earned %1 for the order #%2."
+"Enter your reward code <strong>""%1""</strong> to get %2 in your account dashboard.","Enter your reward code <strong>""%1""</strong> to get %2 in your account dashboard."
+"You spent %1 for the order #%2.","You spent %1 for the order #%2."
+"Earned points will be enrolled to your account after we finish processing your order.","Earned points will be enrolled to your account after we finish processing your order."
+Edit,Edit
+View,View
+"<b>%1</b> have <b>%2</b> available.","<b>%1</b> have <b>%2</b> available."
+"Choose how many points to spend: ","Choose how many points to spend: "
+"<b>%1</b> will spend ","<b>%1</b> will spend "
+"Use maximum <span>%1</span> %2","Use maximum <span>%1</span> %2"
+"Use Default Value","Use Default Value"
+"Reward Information","Reward Information"
+"Your balance is %1","Your balance is %1"
+"View All","View All"
+Created,Created
+Expires,Expires
+"N\A","N\A"
+"Receive email after balance points balance changed","Receive email after balance points balance changed"
+"Receive email before points expired","Receive email before points expired"
+"Apply Code","Apply Code"
+"Save Code","Save Code"
+"Enter your reward code:","Enter your reward code:"
+"Rewards Information","Rewards Information"
+"Your balance is <strong>%1</strong>","Your balance is <strong>%1</strong>"
+"How to earn points","How to earn points"
+"Points will be added to your reward balance after buy product, checkout order.","Points will be added to your reward balance after buy product, checkout order."
+"How to spend points","How to spend points"
+"You can use points to buy product or checkout your purchase at our store.","You can use points to buy product or checkout your purchase at our store."
+"%1 will expire in %2 day(s)","%1 will expire in %2 day(s)"
+"Earn %1 for purchasing this product","Earn %1 for purchasing this product"
+"Buy with %1","Buy with %1"
+"Points Spent:","Points Spent:"
+"%1 off","%1 off"
+"Use Reward Points","Use Reward Points"
+"You have <strong>%1</strong> available.","You have <strong>%1</strong> available."
+"You will spend ","You will spend "
+"Earn %1 for purchasing this product.","Earn %1 for purchasing this product."
+"%1 Item(s)","%1 Item(s)"
+"You have ","You have "
+available.,available.
+"Choose how many points to spend","Choose how many points to spend"
+"Use maximum ","Use maximum "
+"<a href=""http://landofcoder.com"" target=""_BLANK"" title=""""Magento Marketplace, Opencart Marketplace, Magento 2 Extension, Free Magento Extension, Opencart Advanced Reports"">landofcoder.com</a>","<a href=""http://landofcoder.com"" target=""_BLANK"" title=""""Magento Marketplace, Opencart Marketplace, Magento 2 Extension, Free Magento Extension, Opencart Advanced Reports"">landofcoder.com</a>"
+"General Configuration","General Configuration"
+Enable,Enable
+"Point Label","Point Label"
+"If empty, the default label 'Point' will be used.","If empty, the default label 'Point' will be used."
+"Points Label","Points Label"
+"If empty, the default label 'Points' will be used.","If empty, the default label 'Points' will be used."
+"Point Image","Point Image"
+"Use Reward Policy page","Use Reward Policy page"
+"Reward Policy page","Reward Policy page"
+"Earning Points Configuration","Earning Points Configuration"
+"Rounding Method","Rounding Method"
+"E.g: 9.8 points generated from an order can be rounded up to 10 points or down to 9 points","E.g: 9.8 points generated from an order can be rounded up to 10 points or down to 9 points"
+"Points expire after","Points expire after"
+"day(s) since the transaction date.","day(s) since the transaction date."
+"Approve earned points on invoice","Approve earned points on invoice"
+"Approve earned points on shipment","Approve earned points on shipment"
+"Approve earned points if order has status","Approve earned points if order has status"
+"Cancel earned points after order refunding","Cancel earned points after order refunding"
+"Maximum earning points per order","Maximum earning points per order"
+"The maximum earning points for each order. If empty or zero, there is no limitation","The maximum earning points for each order. If empty or zero, there is no limitation"
+"Allow to earn points from tax","Allow to earn points from tax"
+"Spending Points Configuration","Spending Points Configuration"
+"Maximum spending points per order","Maximum spending points per order"
+"The maximum spending points for each order. If empty or zero, there is no limitation","The maximum spending points for each order. If empty or zero, there is no limitation"
+"Allow to spend points from tax","Allow to spend points from tax"
+"Allow to spend points from shipping fee","Allow to spend points from shipping fee"
+"Email Sender","Email Sender"
+"Balance update Email","Balance update Email"
+"Points expire Email","Points expire Email"
+"Send notification before points expiring (in days)","Send notification before points expiring (in days)"
+"Balance Expired Email","Balance Expired Email"
+"Points Balance","Points Balance"
+"Add New Rate","Add New Rate"
+"Delete items","Delete items"
+"Are you sure you wan't to delete selected items?","Are you sure you wan't to delete selected items?"
+Start,Start
+End,End
+"Receipient Email","Receipient Email"
+"Receipient Name","Receipient Name"
+"Customer Name","Customer Name"
+Use,Use
+"You Earn","You Earn"
+"You Spend","You Spend"
+"Account Dashboard","Account Dashboard"
+"My Reward","My Reward"
+"Reward Policy","Reward Policy"
+"Redeem Code","Redeem Code"
+"Notification Settings","Notification Settings"
+"Transactions History","Transactions History"

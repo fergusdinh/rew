@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Landofcoder
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Landofcoder.com license that is
+ * available through the world-wide-web at this URL:
+ * http://landofcoder.com/license
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Landofcoder
+ * @package    Lof_RewardPoints
+ * @copyright  Copyright (c) 2016 Landofcoder (https://landofcoder.com/)
+ * @license    https://landofcoder.com/LICENSE-1.0.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Email/etc/email_templates.xsd">
+    <template id="lofrewardpoints_notification_balance_update_email_template" label="Reward Points - Balance Update Email" file="notification_balance_update_email_template.html" type="html" module="Lof_RewardPoints" area="frontend"/>
+    <template id="lofrewardpoints_notification_points_expire_email_template" label="Reward Points - Points Expire Email" file="notification_send_before_expiring_days.html" type="html" module="Lof_RewardPoints" area="frontend"/>
+    <template id="lofrewardpoints_notification_points_expired_email_template" label="Reward Points - Points Expired Email" file="notification_points_expire_email_template.html" type="html" module="Lof_RewardPoints" area="frontend"/>
+    <template id="lofrewardpoints_notification_send_couponcode_email_template" label="Reward Points - Send Reward Code" file="notification_send_couponcode.html" type="html" module="Lof_RewardPoints" area="frontend"/>
+    <template id="lofrewardpoints_notification_send_referlink_email_template" label="Reward Points - Send Reward Refer" file="notification_send_referlink.html" type="html" module="Lof_RewardPoints" area="frontend"/>
+    <template id="lofrewardpoints_behaviorplugin_referral_subscribe_email_template" label="Reward Points - Send Reward Refer Subscribe" file="notification_send_referlink.html" type="html" module="Lof_RewardPoints" area="frontend"/>
+    <template id="lofrewardpoints_behaviorplugin_referral_confirm_email_template" label="Reward Points - Send Reward Refer Confirm Account" file="notification_send_referlink.html" type="html" module="Lof_RewardPoints" area="frontend"/>
+</config>

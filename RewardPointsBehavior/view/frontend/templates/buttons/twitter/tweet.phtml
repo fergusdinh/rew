@@ -1,0 +1,16 @@
+<?php
+$rewardsCustomer = $this->helper('\Lof\RewardPoints\Helper\Customer');
+$currentUrl = $block->getCurrentEncodedUrl($block->getCurrentUrl());
+?>
+<div class="lrw-social-button lrw-twitter-tweet">
+  <a class="twitter-share-button"
+  href="<?php echo $currentUrl; ?>"
+  data-size="small"
+  data-text="<?php echo __('Check this out!') ?>">
+  <?php echo __('Tweet'); ?>
+
+</a>
+<script>
+  var rewardsTwiiterUrl = '<?php echo $block->getTweetUrl(); ?>';
+</script>
+</div>

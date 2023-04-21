@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Landofcoder
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Landofcoder.com license that is
+ * available through the world-wide-web at this URL:
+ * http://landofcoder.com/license
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Landofcoder
+ * @package    Lof_RewardPoints
+ * @copyright  Copyright (c) 2016 Landofcoder (https://landofcoder.com/)
+ * @license    https://landofcoder.com/LICENSE-1.0.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+	<menu>
+		<add id="Lof_RewardPoints::rewardpoints" title="LOF Reward Points" module="Lof_RewardPoints" sortOrder="11" resource="Lof_RewardPoints::rewardpoints"/>
+
+		<add id="Lof_RewardPoints::earning" title="Earning" module="Lof_RewardPoints" sortOrder="10" resource="Lof_RewardPoints::earning" parent="Lof_RewardPoints::rewardpoints"/>
+		<add id="Lof_RewardPoints::earning_rates" title="Earning Rates" module="Lof_RewardPoints" sortOrder="10" parent="Lof_RewardPoints::earning" action="rewardpoints/earning" resource="Lof_RewardPoints::earning_rates"/>
+		<add id="Lof_RewardPoints::product_earning_points" title="Product Earning Points" module="Lof_RewardPoints" sortOrder="50" parent="Lof_RewardPoints::earning" action="rewardpoints/earning_product/index" resource="Lof_RewardPoints::earning_product"/>
+
+		<add id="Lof_RewardPoints::spending" title="Spending" module="Lof_RewardPoints" sortOrder="20" resource="Lof_RewardPoints::spending" parent="Lof_RewardPoints::rewardpoints"/>
+		<add id="Lof_RewardPoints::spending_rates" title="Spending Rates" module="Lof_RewardPoints" sortOrder="10" parent="Lof_RewardPoints::spending" action="rewardpoints/spending" resource="Lof_RewardPoints::spending_rates"/>
+		<add id="Lof_RewardPoints::product_spending_points" title="Product Spending Points" module="Lof_RewardPoints" sortOrder="30" parent="Lof_RewardPoints::spending" action="rewardpoints/spending_product/index" resource="Lof_RewardPoints::spending_product"/>
+
+		<add id="Lof_RewardPoints::redeemcode" title="Redeem (only for Pro Version)" sortOrder="25" module="Lof_RewardPoints" resource="Lof_RewardPoints::redeemcode" parent="Lof_RewardPoints::rewardpoints"/>
+		<add id="Lof_RewardPoints::redeemcode_add" title="Redeem Code" module="Lof_RewardPoints" sortOrder="50" parent="Lof_RewardPoints::redeemcode" action="rewardpoints/redeem/new" resource="Lof_RewardPoints::redeemcode"/>
+		<add id="Lof_RewardPoints::redeemcode_import" title="Import Code" module="Lof_RewardPoints" sortOrder="60" parent="Lof_RewardPoints::redeemcode" action="rewardpoints/redeem_import" resource="Lof_RewardPoints::redeemcode_import"/>
+		
+		<add id="Lof_RewardPoints::transaction" title="Transactions" sortOrder="30" module="Lof_RewardPoints" resource="Lof_RewardPoints::transaction" parent="Lof_RewardPoints::rewardpoints"/>
+		<add id="Lof_RewardPoints::transaction_add" title="Add New Transaction" module="Lof_RewardPoints" sortOrder="50" parent="Lof_RewardPoints::transaction" action="rewardpoints/transaction/new" resource="Lof_RewardPoints::transaction"/>
+		<add id="Lof_RewardPoints::manage_transactions" title="Manage Transactions" module="Lof_RewardPoints" sortOrder="60" parent="Lof_RewardPoints::transaction" action="rewardpoints/transaction/index" resource="Lof_RewardPoints::transaction"/>
+
+		<add id="Lof_RewardPoints::customer" sortOrder="40" title="Customer" module="Lof_RewardPoints" resource="Lof_RewardPoints::email" parent="Lof_RewardPoints::rewardpoints"/>
+		<add id="Lof_RewardPoints::customer_points" title="Manage Reward Customers" module="Lof_RewardPoints" sortOrder="10" parent="Lof_RewardPoints::customer" action="rewardpoints/customer/index" resource="Lof_RewardPoints::customer" />
+	
+		<add id="Lof_RewardPoints::email" sortOrder="50" title="Email" module="Lof_RewardPoints" resource="Lof_RewardPoints::email" parent="Lof_RewardPoints::rewardpoints"/>
+		<add id="Lof_RewardPoints::email_log" title="Mail Log" module="Lof_RewardPoints" sortOrder="10" parent="Lof_RewardPoints::email" action="rewardpoints/email/index" resource="Lof_RewardPoints::email" />
+
+		<add id="Lof_RewardPoints::settings" sortOrder="60" title="Settings" module="Lof_RewardPoints" resource="Lof_RewardPoints::earning" parent="Lof_RewardPoints::rewardpoints"/>
+		<add id="Lof_RewardPoints::config_rewardpoints" title="Configuration" module="Lof_RewardPoints" sortOrder="10000" parent="Lof_RewardPoints::settings" action="adminhtml/system_config/edit/section/lofrewardpoints" resource="Lof_RewardPoints::config" />
+		<add id="Lof_RewardPoints::import_rewardpoints" title="Import Customer Points" module="Lof_RewardPoints" sortOrder="80" parent="Lof_RewardPoints::settings" action="rewardpoints/import/index" resource="Lof_RewardPoints::import" />
+	</menu>
+</config>

@@ -1,0 +1,15 @@
+<?php
+if($this->enableSpendingPoints()){
+$helper   = $this->helper('Lof\RewardPoints\Helper\Data');
+$_product = $block->getProduct();
+?>
+<?php if($_product && $_product->getSpendingPoints() && $_product->isSaleable()){ ?>
+<div class="price-box">
+	<div class="price-container">
+		<div class="lrw-product-points lrw-spending-points price">
+			<?php echo __('Buy with %1', $helper->formatPoints($_product->getSpendingPoints())) ?>
+		</div>
+	</div>
+</div>
+<?php } ?>
+<?php } ?>

@@ -1,0 +1,156 @@
+"Save and Duplicate","Save and Duplicate"
+"Save Rule","Save Rule"
+"Save and Continue Edit","Save and Continue Edit"
+Delete,Delete
+"Edit Rule '%1'","Edit Rule '%1'"
+"New Rule","New Rule"
+Actions,Actions
+"Points (X)","Points (X)"
+"Maximum per day","Maximum per day"
+"Maximum number of earned points for one customer per day","Maximum number of earned points for one customer per day"
+"Set 0 to disable limit.","Set 0 to disable limit."
+"Maximum per month","Maximum per month"
+"Maximum number of earned points for one customer per month","Maximum number of earned points for one customer per month"
+"Maximum per year","Maximum per year"
+"Maximum number of earned points for one customer per year","Maximum number of earned points for one customer per year"
+Conditions,Conditions
+Events,Events
+"Apply the rule only to customer attributes matching the following conditions.","Apply the rule only to customer attributes matching the following conditions."
+"General Information","General Information"
+"Message in the rewards history","Message in the rewards history"
+"Message for customer notification email","Message for customer notification email"
+"<strong>You can use the following variables:</strong><br/>
+                    {{var customer.name}} - customer name<br/>
+                    {{var customer.totalpoints}} - customer total points<br/>
+                    {{store url =""""}} - store URL<br/>
+                    {{var store.getFrontendName()}} - store name<br/>
+                    {{var transaction_amount}} - formatted amount of current transaction (e.g 10 Rewards Points)<br/>
+                    {{var balance_total}} - formatted balance of customer account (e.g. 100 Rewards Points)<br/>
+                    Leave empty to use default notification email.<br/><br/><strong>Example:</strong><br/>
+                    Dear {{var customer.name}},<br>
+                    <p>Your account balance has been updated at <a href=""{{store url=""""}}"">{{var store.getFrontendName()}}</a>. </p>
+                    Balance Update: <b>{{var transaction_amount}}</b><br>
+                    Message: {{var transaction_comment}}<br>
+                    Balance Total: <b>{{var balance_total}}</b><br>
+                    <br>
+                    Thank you,<br>
+                    <strong>{{var store.getFrontendName()}}</strong>","<strong>You can use the following variables:</strong><br/>
+                    {{var customer.name}} - customer name<br/>
+                    {{var customer.totalpoints}} - customer total points<br/>
+                    {{store url =""""}} - store URL<br/>
+                    {{var store.getFrontendName()}} - store name<br/>
+                    {{var transaction_amount}} - formatted amount of current transaction (e.g 10 Rewards Points)<br/>
+                    {{var balance_total}} - formatted balance of customer account (e.g. 100 Rewards Points)<br/>
+                    Leave empty to use default notification email.<br/><br/><strong>Example:</strong><br/>
+                    Dear {{var customer.name}},<br>
+                    <p>Your account balance has been updated at <a href=""{{store url=""""}}"">{{var store.getFrontendName()}}</a>. </p>
+                    Balance Update: <b>{{var transaction_amount}}</b><br>
+                    Message: {{var transaction_comment}}<br>
+                    Balance Total: <b>{{var balance_total}}</b><br>
+                    <br>
+                    Thank you,<br>
+                    <strong>{{var store.getFrontendName()}}</strong>"
+Notifications,Notifications
+"Earning Rule Information","Earning Rule Information"
+General,General
+"You deleted the rule.","You deleted the rule."
+"We can't find a rule to delete.","We can't find a rule to delete."
+"This rule no longer exists.","This rule no longer exists."
+"Edit Rule","Edit Rule"
+"A total of %1 record(s) have been deleted.","A total of %1 record(s) have been deleted."
+"The wrong earning rule is specified.","The wrong earning rule is specified."
+"You saved the rule.","You saved the rule."
+"You duplicated this rule.","You duplicated this rule."
+"Something went wrong while duplicating the rule.","Something went wrong while duplicating the rule."
+"BUGS2: %1","BUGS2: %1"
+"Something went wrong while saving the rule data. Please review the error log.","Something went wrong while saving the rule data. Please review the error log."
+"Something went wrong while saving your subscription.","Something went wrong while saving your subscription."
+"We saved the subscription.","We saved the subscription."
+"We removed the subscription.","We removed the subscription."
+"Facebook Like Points has been canceled.","Facebook Like Points has been canceled."
+"An unspecified error occurred. Please contact us for assistance.","An unspecified error occurred. Please contact us for assistance."
+"You received %1 for signing in","You received %1 for signing in"
+"You received %1 for signing up","You received %1 for signing up"
+"You received %1 for sign up for newsletter","You received %1 for sign up for newsletter"
+"Newsletter Signup points has been canceled","Newsletter Signup points has been canceled"
+"You will receive %1 after approving of this review","You will receive %1 after approving of this review"
+"Happy birthday! You received %1","Happy birthday! You received %1"
+"You have earned %1 for Facebook Like","You have earned %1 for Facebook Like"
+"You have earned %1 for Facebook Share","You have earned %1 for Facebook Share"
+"Facebook Like Points has been canceled","Facebook Like Points has been canceled"
+"You have earned %1 for Tweet","You have earned %1 for Tweet"
+"You have earned %1 for Google+","You have earned %1 for Google+"
+"G+1 Points has been canceled","G+1 Points has been canceled"
+"You have earned %1 for Pin","You have earned %1 for Pin"
+"Unknown condition operator","Unknown condition operator"
+"Customer signs in","Customer signs in"
+"Customer signs up","Customer signs up"
+"Newsletter sign up","Newsletter sign up"
+"Customer writes a product's review","Customer writes a product's review"
+"Customer birthday","Customer birthday"
+"Facebook Like","Facebook Like"
+"Facebook Share","Facebook Share"
+"Twitter Tweet","Twitter Tweet"
+"Google Like","Google Like"
+"Printerest Pin","Printerest Pin"
+Name,Name
+Email,Email
+Phone,Phone
+ZIP,ZIP
+Country,Country
+State/Province,State/Province
+"Customer Since","Customer Since"
+"Confirmed Email","Confirmed Email"
+"Account Created in","Account Created in"
+"Billing Address","Billing Address"
+"Shipping Address","Shipping Address"
+"Date of Birth","Date of Birth"
+"Tax VAT Number","Tax VAT Number"
+Gender,Gender
+"Street Address","Street Address"
+City,City
+Fax,Fax
+"VAT Number","VAT Number"
+Company,Company
+"Billing Firstname","Billing Firstname"
+"Billing Lastname","Billing Lastname"
+"Total Sales","Total Sales"
+"Conditions Combination","Conditions Combination"
+"Customer Attribute","Customer Attribute"
+Order,Order
+Wishlist,Wishlist
+Review,Review
+"Lifetime Sales","Lifetime Sales"
+"Date of Birth from","Date of Birth from"
+"Date of Birth to","Date of Birth to"
+"Total orders","Total orders"
+"Total quantity of products","Total quantity of products"
+"Total count of products","Total count of products"
+"Grand Total","Grand Total"
+"Shipping Method","Shipping Method"
+"Total Reviews","Total Reviews"
+Street,Street
+Region,Region
+Postcode,Postcode
+Subtotal,Subtotal
+Edit,Edit
+"Add New Rule","Add New Rule"
+Share,Share
+"Check this out!","Check this out!"
+Tweet,Tweet
+"<a href=""http://landofcoder.com"" target=""_BLANK"" title=""""Magento Marketplace, Opencart Marketplace, Magento 2 Extension, Free Magento Extension, Opencart Advanced Reports"">landofcoder.com</a>","<a href=""http://landofcoder.com"" target=""_BLANK"" title=""""Magento Marketplace, Opencart Marketplace, Magento 2 Extension, Free Magento Extension, Opencart Advanced Reports"">landofcoder.com</a>"
+"Reward Points","Reward Points"
+"Behavior Plugin Configuration","Behavior Plugin Configuration"
+Enable,Enable
+"Facebook API","Facebook API"
+"Get key at <a href=""https://developers.facebook.com"" target=""_blank"">developers.facebook.com</a>","Get key at <a href=""https://developers.facebook.com"" target=""_blank"">developers.facebook.com</a>"
+"Store View","Store View"
+"Delete items","Delete items"
+"Are you sure you wan't to delete selected items?","Are you sure you wan't to delete selected items?"
+ID,ID
+"Rule Name","Rule Name"
+"Earn Points","Earn Points"
+Description,Description
+Start,Start
+End,End
+Status,Status

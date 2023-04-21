@@ -1,0 +1,13 @@
+<?php
+$helper  = $this->helper('Lof\RewardPoints\Helper\Data');
+$show_on_listing = $helper->getConfig()->getConfig("display/show_on_listing");
+if($show_on_listing){
+$product = $block->getProduct();
+$points  = $product->getSpendingPoints();
+?>
+<?php if ($product && $points) { ?>
+<div class="lrw-product-points lrw-spending-points">
+	<?php echo __('Buy with %1', $helper->formatPoints($points)); ?>	
+</div>
+<?php } ?>
+<?php } ?>

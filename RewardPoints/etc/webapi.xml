@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+
+    <route method="GET" url="/V1/lof-rewardpoints/customer/:customer">
+        <service class="Lof\RewardPoints\Api\RewardPointManagementInterface" method="getTotalCustomerPoints"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route method="GET" url="/V1/lof-rewardpoints/order">
+        <service class="Lof\RewardPoints\Api\RewardPointManagementInterface" method="getOrderEarnSpentPoints"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route method="GET" url="/V1/lof-rewardpoints/spend-point">
+        <service class="Lof\RewardPoints\Api\RewardPointManagementInterface" method="getTotalSpentPoint"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <!-- Customer logged In API -->
+    <route url="/V1/carts/mine/point" method="PUT">
+        <service class="Lof\RewardPoints\Api\CreditManagementInterface" method="set"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+    </route>
+    <route url="/V1/carts/applypoint/:cartId/:spendPoint/:spendingRuleId" method="POST">
+        <service class="Lof\RewardPoints\Api\RewardPointManagementInterface" method="applyPoint"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+    </route>
+    <route method="GET" url="/V1/lof-rewardpoints/mine/transactions">
+        <service class="Lof\RewardPoints\Api\TransactionRepositoryInterface" method="getMyList"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+    <route method="GET" url="/V1/lof-rewardpoints/mine/transaction/:transactionId">
+        <service class="Lof\RewardPoints\Api\TransactionRepositoryInterface" method="getMyTransactionById"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+    <route method="GET" url="/V1/lof-rewardpoints/mine/applyCode/:code/:storeId">
+        <service class="Lof\RewardPoints\Api\RedeemRepositoryInterface" method="applyCode"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+    <!--    Backend API-->
+    <route method="GET" url="/V1/lof-rewardpoints/transactions">
+        <service class="Lof\RewardPoints\Api\TransactionRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="Lof_RewardPoints::transaction"/>
+        </resources>
+    </route>
+    <route method="GET" url="/V1/lof-rewardpoints/transaction/:transactionId">
+        <service class="Lof\RewardPoints\Api\TransactionRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="Lof_RewardPoints::transaction"/>
+        </resources>
+    </route>
+    <route method="GET" url="/V1/lof-rewardpoints/canceltransaction/:transactionId">
+        <service class="Lof\RewardPoints\Api\TransactionRepositoryInterface" method="cancelById"/>
+        <resources>
+            <resource ref="Lof_RewardPoints::transaction_save"/>
+        </resources>
+    </route>
+    <route method="PUT" url="/V1/lof-rewardpoints/transaction">
+        <service class="Lof\RewardPoints\Api\TransactionRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Lof_RewardPoints::transaction_save"/>
+        </resources>
+    </route>
+    <route method="DELETE" url="/V1/lof-rewardpoints/transaction/:transactionId">
+        <service class="Lof\RewardPoints\Api\TransactionRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="Lof_RewardPoints::transaction_delete"/>
+        </resources>
+    </route>
+
+    <route method="GET" url="/V1/lof-rewardpoints/redeemcodes">
+        <service class="Lof\RewardPoints\Api\RedeemRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="Lof_RewardPoints::redeemcode"/>
+        </resources>
+    </route>
+    <route method="GET" url="/V1/lof-rewardpoints/redeemcode/:redeemId">
+        <service class="Lof\RewardPoints\Api\RedeemRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="Lof_RewardPoints::redeemcode"/>
+        </resources>
+    </route>
+    <route method="PUT" url="/V1/lof-rewardpoints/redeemcode">
+        <service class="Lof\RewardPoints\Api\RedeemRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Lof_RewardPoints::redeemcode_add"/>
+        </resources>
+    </route>
+    <route method="DELETE" url="/V1/lof-rewardpoints/redeemcode/:redeemId">
+        <service class="Lof\RewardPoints\Api\RedeemRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="Lof_RewardPoints::redeemcode_delete"/>
+        </resources>
+    </route>
+</routes>

@@ -1,0 +1,15 @@
+<?php
+$type = $this->getRequest()->getParam('type');
+$url = $this->getUrl('rewardpointsrule/spending/new', [
+		'type' => $type
+	]);
+?>
+<div class="page-actions" data-ui-id="page-actions-toolbar-content-header">
+	<div class="page-actions-inner" data-title="Spending Rules">
+		<div class="page-actions-buttons">
+			<button id="add" title="Add New Rule" type="button" class="action- scalable primary" onclick="location.href = '<?php echo $url ?>'" data-ui-id="add-button">
+				<span><?php echo __('Add New Rule'); ?></span>
+			</button>
+		</div>
+	</div>
+</div>

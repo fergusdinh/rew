@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Landofcoder
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Landofcoder.com license that is
+ * available through the world-wide-web at this URL:
+ * http://landofcoder.com/license
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Landofcoder
+ * @package    Lof_RewardPoints
+ * @copyright  Copyright (c) 2016 Landofcoder (https://landofcoder.com/)
+ * @license    https://landofcoder.com/LICENSE-1.0.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="Lof_RewardPoints::rewardpoints" title="Reward Points">
+					<resource id="Lof_RewardPoints::earning" title="Earning" sortOrder="10">
+						<resource id="Lof_RewardPoints::earning_rates" title="Earning Rates" sortOrder="10" />
+						<resource id="Lof_RewardPoints::earning_product" title="Earning Product" sortOrder="20" />
+						<resource id="Lof_RewardPoints::earning_delete" title="Delete Earning Rate" sortOrder="25" />
+						<resource id="Lof_RewardPoints::earning_save" title="Save Earning Rate" sortOrder="30" />
+					</resource>
+					<resource id="Lof_RewardPoints::spending" title="Spending" sortOrder="20">
+						<resource id="Lof_RewardPoints::spending_rates" title="Spending Rates" sortOrder="10" />
+						<resource id="Lof_RewardPoints::spending_product" title="Spending Product" sortOrder="20" />
+						<resource id="Lof_RewardPoints::spending_delete" title="Delete Spending Rate" sortOrder="25" />
+						<resource id="Lof_RewardPoints::spending_save" title="Save Spending Rate" sortOrder="30" />
+					</resource>
+					<resource id="Lof_RewardPoints::transaction" title="Transaction" sortOrder="30">
+						<resource id="Lof_RewardPoints::transaction_save" title="Save Transaction" sortOrder="10" />
+						<resource id="Lof_RewardPoints::transaction_delete" title="Delete Transactions" sortOrder="20" />
+					</resource>
+					<resource id="Lof_RewardPoints::redeemcode" title="Redeem Code" sortOrder="30">
+						<resource id="Lof_RewardPoints::redeemcode_add" title="Generate Code" sortOrder="10" />
+						<resource id="Lof_RewardPoints::redeemcode_import" title="Import Code" sortOrder="20" />
+						<resource id="Lof_RewardPoints::redeemcode_delete" title="Delete Code" sortOrder="30" />
+					</resource>
+					<resource id="Lof_RewardPoints::customer" title="Customer" sortOrder="40" />
+					<resource id="Lof_RewardPoints::email" title="Mail" sortOrder="50" />
+				</resource>
+				<resource id="Magento_Backend::stores">
+					<resource id="Magento_Backend::stores_settings">
+						<resource id="Magento_Config::config">
+							<resource id="Lof_RewardPoints::config" title="Reward Points Settings" />
+						</resource>
+					</resource>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

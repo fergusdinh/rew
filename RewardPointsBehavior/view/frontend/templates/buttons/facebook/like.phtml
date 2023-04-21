@@ -1,0 +1,14 @@
+<?php
+$rewardsCustomer = $this->helper('\Lof\RewardPoints\Helper\Customer');
+$currentUrl      = $block->getCurrentEncodedUrl($block->getCurrentUrl());
+?>
+<div class="lrw-social-button lrw-facebook-like">
+	<div class="fb-like" data-href="<?php echo $currentUrl; ?>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" width="450" data-send="false" font="arial" colorscheme="light" data-share="false"></div>
+	<div class="lrw_share_fb"><?php echo __('Share'); ?></div>
+	<script>
+		var fbLikeUrl = '<?= $block->getLikeUrl(); ?>';
+		var fbUnlikeUrl = '<?= $block->getUnlikeUrl(); ?>';
+		var fbShareUrl = '<?= $block->getShareUrl(); ?>';
+	</script>
+</div>
+

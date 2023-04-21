@@ -1,0 +1,18 @@
+<?php
+$customer = $block->getCustomer();
+?>
+<form action="<?php echo $block->getApplyCodeUrl(); ?>" method="POST">
+	<div class="fieldset">
+		<div class="field">
+			<input type="checkbox" <?php if($customer->getUpdatePointNotification()) { ?>checked="checked"<?php } ?> name="update_point_notification"/> <?php echo __('Receive email after balance points balance changed'); ?>
+		</div>
+		<div class="field">
+			<input type="checkbox" <?php if($customer->getExpirePointNotification()) { ?>checked="checked"<?php } ?>  name="expire_point_notification"/> <?php echo __('Receive email before points expired'); ?>
+		</div>
+		<div class="field">
+			<button class="button lrw-button" id="lrw-button" value="<?php echo __('Save Config'); ?>">
+				<span><?php echo __('Save Config'); ?></span>
+			</button>
+		</div>
+	</div>
+</form>

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Landofcoder
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Landofcoder.com license that is
+ * available through the world-wide-web at this URL:
+ * http://landofcoder.com/license
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Landofcoder
+ * @package    Lof_RewardPointsBehavior
+ * @copyright  Copyright (c) 2016 Landofcoder (http://www.landofcoder.com/)
+ * @license    http://www.landofcoder.com/LICENSE-1.0.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+	<system>
+		<section id="lofrewardpoints" translate="label" sortOrder="100"  type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+			<class>separator-top</class>
+			<label>Reward Points</label>
+			<tab>landofcoder</tab>
+			<resource>Lof_RewardPoints::config</resource>
+			<group id="behaviorplugin" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Behavior Plugin Configuration</label>
+				<comment>Enable the behaviour plugin to use behaviour earning rule, behaviour spending rul</comment>
+				<field id="enable" translate="label comment" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1" >
+					<label>Enable</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="facebook_api_key" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+					<label>Facebook API</label>
+					<comment><![CDATA[Get key at <a href="https://developers.facebook.com" target="_blank">developers.facebook.com</a>]]></comment>
+				</field>
+				<field id="referral_subscribe_email_template" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Select Email Template (Referral subscribe)</label>
+					<source_model>\Lof\RewardPoints\Model\System\Config\Source\Email\Template</source_model>
+				</field>
+				<field id="referral_confirm_email_template" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Select Email Template (Referral confirm)</label>
+					<source_model>\Lof\RewardPoints\Model\System\Config\Source\Email\Template</source_model>
+				</field>
+				<field id="unable_guest_orders" translate="label comment" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1" >
+					<label>Unable guest orders</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment><![CDATA[Unable guest orders when customer orders from referral url/email.]]></comment>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Landofcoder
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Landofcoder.com license that is
+ * available through the world-wide-web at this URL:
+ * http://landofcoder.com/license
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Landofcoder
+ * @package    Lof_RewardPoints
+ * @copyright  Copyright (c) 2016 Landofcoder (https://landofcoder.com/)
+ * @license    https://landofcoder.com/LICENSE-1.0.html
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" label="Customer My Account (All Pages)" design_abstraction="custom">
+	<update handle="rewardpoints_customer_account"/>
+	<head>
+		<title>My Reward</title>
+	</head>
+	<body>
+		<referenceBlock name="root">
+			<action method="setHeaderTitle">
+				<argument translate="true" name="title" xsi:type="string">My Reward</argument>
+			</action>
+		</referenceBlock>
+		<referenceContainer name="content">
+			<block class="Lof\RewardPoints\Block\Account\Dashboard\Summary" after="customer_account_navigation" name="lrw.account.summary" template="account/dashboard/summary.phtml" cacheable="false">
+			</block>
+			<block class="Lof\RewardPoints\Block\Account\Dashboard\Listing" after="rewards.account.summary" name="lrw.account.poitns" template="account/dashboard/listing.phtml" cacheable="false">
+				<arguments>
+					<argument name="title" xsi:type="string">Recent Transactions</argument>
+					<argument name="limit" xsi:type="string">8</argument>
+					<argument name="show_alllink" xsi:type="boolean">1</argument>
+				</arguments>
+			</block>
+		</referenceContainer>
+	</body>
+</page>

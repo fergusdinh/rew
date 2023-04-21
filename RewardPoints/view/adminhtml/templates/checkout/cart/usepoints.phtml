@@ -1,0 +1,168 @@
+<?php
+$rewardsData    = $this->helper('Lof\RewardPoints\Helper\Data');
+$purchase       = $block->getPurchase();
+$spendPoints    = $purchase->getSpendPoints();
+$totalpoints    = $rewardsData->formatPoints($block->getBalancePoints());
+$usePoints      = $purchase->getSpendMaxPoints();
+$rules          = $block->getRules();
+$currentRuleId  = $block->getCurrentRule();
+$sliderRules    = $block->getRuleBySlider();
+$customerHelper = $this->helper('Magento\Customer\Helper\View');
+$customer       = $block->getCustomer();
+$customerName   = $customerHelper->getCustomerName($customer);
+
+$maximumPoints = 0;
+if ($currentRuleId && isset($sliderRules[$currentRuleId])) {
+    $maximumPoints = $sliderRules[$currentRuleId]['max'];
+}
+?>
+<?php if (!empty($sliderRules)) { ?>
+    <div id="block-lrwuserpoints" class="block lrwuserpoints">
+        <legend class="admin__legend"><span><?php /* @escapeNotVerified */ echo __('Reward Points') ?></span></legend>
+        <div id="block-lrwuserpoints-summary" class="content" data-role="content" aria-labelledby="block-lrwuserpoints-heading">
+            <div class="lrw-usepoints">
+                <?php echo __('<b>%1</b> have <b>%2</b> available.', $customerName, $totalpoints); ?>
+                <div class="fieldset lrw-points">
+                    <div class="field">
+                        <?php if ($rules && $rules->count()) { ?>
+                            <label class="label">
+                                <span><?php echo __('Choose how many points to spend: '); ?></span>
+                            </label>
+                            <div class="control">
+                                <select name="select lrw-spending-rules" id="lrw-spending-rules">
+                                    <?php foreach ($rules as $rule) { ?>
+                                        <?php $classes = '';
+                                        if ($rule->getId() == $currentRuleId) {
+                                            $classes = 'selected="selected"';
+                                        }
+                                        ?>
+                                        <option <?php echo $classes; ?> value="<?php echo $rule->getId() ?>"><?php echo $rule->getName();  ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                            <div class="lrw-message"></div>
+                            <div class="control lrw-slider-control">
+                                <div class="lrw-slider">
+                                    <div id="lrw-slider"></div>
+                                    <script type="text/javascript">
+                                        require([
+                                            'jquery',
+                                            'Lof_RewardPoints/js/rewardsslider',
+                                            'Magento_Sales/order/create/form'
+                                        ], function($, ko, rewardsslider, totals){
+                                            jQuery(function ($) {
+                                                var spendingRules = <?php echo json_encode($sliderRules); ?>;
+                                                var slider;
+                                                var ruleId;
+                                                $('#lrw-spending-rules').on('change', function(){
+                                                    var self = $(this);
+                                                    var rule = spendingRules[$(this).val()];
+                                                    var isProgress = false;
+                                                    if(rule) {
+                                                        if (rule.message) {
+                                                            $('.lrw-message').html(rule.message).show();
+                                                            $('.lrw-slider-control').hide();
+                                                        } else {
+                                                            $('.lrw-message').hide();
+                                                            $('.lrw-slider-control').show();
+                                                        }
+                                                        $('.lrw-slider').show();
+                                                        if($('#lrw-slider').data('lof-rewardsslider')){
+                                                            $('#lrw-slider').rewardsslider('destroy');
+                                                        }
+                                                        slider = $('#lrw-slider').rewardsslider({
+                                                            sliderSettings : rule,
+                                                            progressbar: {
+                                                                steps: 24
+                                                            },
+                                                            ajaxUrl: '<?php echo $block->getApplyPointsUrl(); ?>',
+                                                            onStartSlider: function(event, slider) {
+                                                                isProgress = true;
+                                                            },
+                                                            onChangeSlider: function(event, slider) {
+                                                                ruleId                         = self.val();
+                                                                var value                      = slider.getValue();
+                                                                spendingRules[ruleId]['value'] = value;
+                                                                $('.slider-num').val(value);
+                                                                if (value == spendingRules[ruleId]['max']) {
+                                                                    $('#lrw-useallpoitns').prop('checked', true);
+                                                                } else {
+                                                                    $('#lrw-useallpoitns').prop('checked', false);
+                                                                }
+                                                                $('.useallpoints span').html(spendingRules[ruleId]['max']);
+                                                                $('#lrw-useallpoitns').val(spendingRules[ruleId]['max']);
+                                                            },
+                                                            onStopSlider: function(event, slider) {
+                                                                if (isProgress) {
+                                                                    order.loadArea('totals', true);
+                                                                    isProgress = false;
+                                                                }
+                                                            }
+                                                        });
+                                                        slider.data('lof-rewardsslider').onChange();
+                                                    }
+                                                    $(document).on('change', '.slider-num', function() {
+                                                        if (slider.data('lof-rewardsslider')) {
+                                                            var val = $(this).val();
+                                                            if (rule.max && val > rule.max) {
+                                                                val = rule.max;
+                                                            }
+                                                            var newVal = slider.data('lof-rewardsslider').updateValue(val, true);
+                                                            $(this).val(newVal);
+                                                        }
+                                                    });
+                                                }).change();
+                                                $('#lrw-useallpoitns').on('click', function(e){
+                                                    var totalPoints = $(this).val();
+                                                    var rule = spendingRules;
+                                                    console.log(rule);
+                                                    if ($(this).is(':checked')) {
+                                                        $('.slider-num').val(totalPoints);
+                                                    } else {
+                                                        $('.slider-num').val(spendingRules[ruleId]['min']);
+                                                    }
+                                                    $('.slider-num').trigger('change');
+                                                    jQuery.ajax({
+                                                        showLoader: true,
+                                                        url: "<?php echo $block->getApplyPointsUrl();?>",
+                                                        type: "POST",
+                                                        dataType: "",
+                                                        data: {
+                                                            isAjax: true,
+                                                            spendpoints: this.getValue(),
+                                                            discount: this.discount,
+                                                            rule: rule.id,
+                                                            stepdiscount: rule.step,
+                                                            quote: rule.quote,
+                                                            rulemin: rule.rulemin,
+                                                            rulemax: rule.rulemax,},
+                                                        success: function(json){
+                                                            location.reload(true);
+                                                        }
+                                                    });
+                                                });
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                                <div class="lrw-slider-input">
+                                    <span><?php echo __('<b>%1</b> will spend ', $customerName); ?></span>
+                                    <input name="slider-num" class="slider-num admin__control-text" type="text" />
+                                    <span><?php echo $block->getPointsLabel(); ?></span>
+                                </div>
+                                <?php if ($maximumPoints) { ?>
+                                    <div class="input-box">
+                                        <input type="checkbox" id="lrw-useallpoitns" <?php if ($maximumPoints ==  $spendPoints) { ?>checked="checked" <?php } ?> value="<?php echo $maximumPoints ?>" name="useallpoitns" />
+                                        <label for="useallpoints" class="useallpoints">
+                                            <?php echo __('Use maximum <span>%1</span> %2', $maximumPoints, $rewardsData->getUnit($maximumPoints)); ?>
+                                        </label>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } ?>

@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Landofcoder
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Landofcoder.com license that is
+ * available through the world-wide-web at this URL:
+ * http://landofcoder.com/license
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Landofcoder
+ * @package    Lof_RewardPoints
+ * @copyright  Copyright (c) 2016 Landofcoder (https://landofcoder.com/)
+ * @license    https://landofcoder.com/LICENSE-1.0.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<lofrewardpoints>
+			<general>
+				<enable>1</enable>
+				<point_label>point</point_label>
+				<points_label>points</points_label>
+				<use_policypage>0</use_policypage>
+				<point_image>default/point-icon.png</point_image>
+			</general>
+			<display>
+				<show_on_listing>1</show_on_listing>
+				<show_earning_on_product>1</show_earning_on_product>
+				<show_spending_on_product>1</show_spending_on_product>
+				<show_on_shopping_cart>1</show_on_shopping_cart>
+				<show_on_checkout_page>1</show_on_checkout_page>
+			</display>
+			<earning>
+				<rounding_method>round</rounding_method>
+				<expire></expire>
+				<is_earn_after_action>after_invoice</is_earn_after_action>
+				<maximum_points></maximum_points>
+				<by_tax>0</by_tax>
+				<by_shipping>0</by_shipping>
+				<earn_in_statuses>complete</earn_in_statuses>
+			</earning>
+			<spending>
+				<maximum_points></maximum_points>
+				<by_tax>0</by_tax>
+				<by_shipping>0</by_shipping>
+				<earn_in_statuses>complete</earn_in_statuses>
+			</spending>
+			<notification>
+				<sender_email>general</sender_email>
+				<balance_update_email_template>lofrewardpoints_notification_balance_update_email_template</balance_update_email_template>
+				<points_expire_email_template>lofrewardpoints_notification_points_expire_email_template</points_expire_email_template>
+				<send_before_expiring_days></send_before_expiring_days>
+				<points_expired_email_template>lofrewardpoints_notification_points_expired_email_template</points_expired_email_template>
+				<send_referlink_email_template>lofrewardpoints_notification_send_referlink_email_template</send_referlink_email_template>
+			</notification>
+		</lofrewardpoints>
+	</default>
+</config>

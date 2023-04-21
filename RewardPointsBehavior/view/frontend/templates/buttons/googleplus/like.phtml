@@ -1,0 +1,11 @@
+<?php
+$rewardsCustomer = $this->helper('\Lof\RewardPoints\Helper\Customer');
+$currentUrl      = $block->getCurrentEncodedUrl($block->getCurrentUrl());
+?>
+<div class="lrw-social-button lrw-google-like">
+	<div class="g-plusone" data-size="medium" data-href="<?php echo $currentUrl; ?>" data-callback=""></div>
+	<script>
+		var ggLikeUrl = '<?= $block->getLikeUrl(); ?>';
+		var ggUnlikeUrl = '<?= $block->getUnlikeUrl(); ?>';
+	</script>
+</div>

@@ -1,0 +1,112 @@
+<script type="text/javascript">
+		requirejs(['jquery','underscore'], function(jQuery,_){
+            const earningPointUrl = "<?= $block->getUrl("rewardpoints/index/earningPoint");?>";
+            let earning_points_label = "<?= __('Earn %1 for purchasing this product.');?>";
+            let found_child_product_ids = [];
+            let productEarningPoints = [];
+            let current_child_product_id = null;
+            let base_earning_points_label = "";
+
+            jQuery(document).ready(function() {
+                if(jQuery(".product-earning-points").length > 0){
+                    base_earning_points_label = jQuery(".product-earning-points").html();
+                    jQuery( ".product-options-wrapper div" ).click(function() {
+                        selectChildProductId();
+                    });
+                }
+            });
+
+            function selectChildProductId () {  
+                let selected_options = {};
+                let product_id_index = null;
+                if(jQuery('div.swatch-attribute').length > 0){
+                    jQuery('div.swatch-attribute').each(function(k,v){
+                        let attribute_id    = jQuery(v).attr('data-attribute-id');
+                        let option_selected = jQuery(v).attr('data-option-selected');
+                        if(!attribute_id || !option_selected){ return;}
+                        selected_options[attribute_id] = option_selected;
+                    });
+                }else if(jQuery('.super-attribute-select').length > 0){
+                    jQuery('.super-attribute-select').each(function(k,v){
+                        let attribute_id    = jQuery(v).attr('id');
+                        attribute_id = attribute_id.replace("attribute","").replace(" ","");
+                        let option_selected = jQuery(v).val();
+                        if(!attribute_id || !option_selected){ return; }
+                        selected_options[attribute_id] = option_selected;
+                    });
+                }
+                if(jQuery('[data-role=swatch-options]').data('mageSwatchRenderer')) {
+                    product_id_index = jQuery('[data-role=swatch-options]').data('mageSwatchRenderer').options.jsonConfig.index;
+                    if(product_id_index){
+                        jQuery.each(product_id_index, function(product_id,attributes){
+                            let productIsSelected = function(attributes, selected_options){
+                                return _.isEqual(attributes, selected_options);
+                            }
+                            if(productIsSelected(attributes, selected_options)){
+                                found_child_product_ids.push(product_id);
+                                current_child_product_id = product_id;
+                                getProductEarningPoints(product_id);
+                            }
+                        });
+                    }
+                }else{
+                    let product_id = jQuery('[name="selected_configurable_option"]').val();
+                    if(product_id){
+                        found_child_product_ids.push(product_id);
+                        current_child_product_id = product_id;
+                        getProductEarningPoints(product_id);
+                    }
+                }
+            }
+
+            function getProductEarningPoints(product_id) {
+                //
+                const foundPointItem = getProductPoint(product_id);
+                let msgEl = jQuery(".product-earning-points");
+                if(foundPointItem !== undefined && foundPointItem.point_label !== undefined && foundPointItem.point > 0){
+                    const newEarningPointLabel = earning_points_label.replace("%1", foundPointItem.point_label)
+                    msgEl.html(newEarningPointLabel)
+                }else {
+                    //Call Ajax to earningPointUrl get product earning points.
+                    jQuery.ajax({
+                        url: earningPointUrl,
+                        data: {
+                            product_id: product_id
+                        },
+                        type: "POST",
+                        showLoader: true,
+                        success: function(data)
+                        {
+                            if(data && data.earningPoint !== undefined && data.earningPoint && data.earningPointLabel!==undefined){
+                                setProductPoint(product_id, data.earningPoint, data.earningPointLabel);
+                                const newEarningPointLabel = earning_points_label.replace("%1", data.earningPointLabel)
+                                msgEl.html(newEarningPointLabel)
+                            }else{
+                                msgEl.html(base_earning_points_label)
+                            }
+                        },
+                        error: function(error){
+                            msgEl.html(base_earning_points_label)
+                        }
+                    })
+                }
+            }
+
+            const setProductPoint = function(product_id, point, point_label) {
+                let product_point = getProductPoint(product_id)
+                if(!product_point){
+                    product_point = {
+                        product_id: product_id,
+                        point: parseFloat(point),
+                        point_label: point_label
+                    }
+                    productEarningPoints.push(product_point)
+                }
+                return product_point
+            }
+
+            const getProductPoint = function(product_id) {
+                return productEarningPoints.find(o => o.product_id === product_id)
+            }
+		});
+</script>

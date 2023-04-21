@@ -1,0 +1,57 @@
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!-- ko if: isShowRewardpoints() -->
+<tr class="lrw-rewardpoints" rowspan="2">
+	<th colspan="2" class="mark" scope="row">
+		<div id="block-lrwuserpoints" class="block lrwuserpoints" data-bind="mageInit: {'collapsible':{'openedState': 'active', 'active': false}}" data-collapsible="true" role="tablist">
+			<div class="title" data-role="title" role="tab" aria-selected="true" aria-expanded="true" tabindex="0">
+				<strong id="block-lrwuserpoints-heading" role="heading" aria-level="2">
+					<!-- ko i18n: 'Use Reward Points'--><!-- /ko -->
+					<span data-bind="html: pointsImage"></span>
+				</strong>
+			</div>
+			<div id="block-lrwuserpoints-summary" class="content" data-role="content" aria-labelledby="block-lrwuserpoints-heading">
+				<div class="lrw-usepoints">
+					<span>
+						<!-- ko i18n: 'You have '--><!-- /ko --><strong data-bind="text: availablePoints"></strong> <strong data-bind="text: pointsLabel"></strong> <!-- ko i18n: 'available.'--><!-- /ko -->
+					</span>
+					<div class="fieldset lrw-points">
+						<div class="field">
+							<span><!-- ko i18n: 'Choose how many points to spend'--><!-- /ko --></span>
+							<div class="control">
+								<select data-bind="options: getRules(), optionsValue: 'id',optionsText: 'name', value: selectedRule, event: {change: changeRule} ">
+								</select>
+								<div class="lrw-message" data-bind="if: ruleMessage">
+									<span class="lrw-message-warning" data-bind="html: ruleMessage"></span>
+								</div>
+							</div>
+							<div class="control" data-bind="visible: showSlide">
+								<div class="lrw-slider">
+									<div id="lrw-slider" data-bind="rewardslider: slide, event: {change: changeSlide}"></div>
+								</div>
+								<div class="lrw-slider-input">
+									<span><!-- ko i18n: 'You will spend '--><!-- /ko --></span>
+									<input name="slider-num" maxlength="20" data-bind="textInput: points, event: {change: changePoints}" class="slider-num" type="text" />
+									<span data-bind="text: pointsLabel"></span>
+								</div>
+
+								<div class="input-box">
+									<input type="checkbox" data-bind="checked: selected, click: useMaxPoints" />
+									<label for="useallpoints" class="useallpoints">
+										<span><!-- ko i18n: 'Use maximum '--><!-- /ko --></span>
+                                        <span data-bind="text: maxPoints"></span> <span data-bind="text: pointsLabel"></span>
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</th>
+</tr>
+<!-- /ko -->

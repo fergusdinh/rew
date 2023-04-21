@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Landofcoder
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Landofcoder.com license that is
+ * available through the world-wide-web at this URL:
+ * http://landofcoder.com/license
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Landofcoder
+ * @package    Lof_RewardPointsBehavior
+ * @copyright  Copyright (c) 2016 Landofcoder (http://www.landofcoder.com/)
+ * @license    http://www.landofcoder.com/LICENSE-1.0.html
+ */
+
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../lib/internal/Magento/Framework/Event/etc/events.xsd">
+    <event name="review_save_commit_after">
+        <observer name="lof_rewardbehavior_review_save_commit_after" instance="\Lof\RewardPointsBehavior\Observer\ProductReviewSubmited"/>
+    </event>
+    <event name="customer_login">
+        <observer name="lof_rewardbehavior_signin_save_commit_after" instance="\Lof\RewardPointsBehavior\Observer\SignIn"/>
+    </event>
+    <event name="customer_register_success">
+        <observer name="lof_rewardbehavior_signup_save_commit_after" instance="\Lof\RewardPointsBehavior\Observer\SignUp"/>
+    </event>
+    <event name="newsletter_subscriber_save_before">
+        <observer name="lof_rewardbehavior_subcribed_save_commit_after" instance="\Lof\RewardPointsBehavior\Observer\NewsletterSubscription"/>
+    </event>
+    <event name="checkout_onepage_controller_success_action">
+        <observer name="lof_rewardbehavior_place_order_after" instance="\Lof\RewardPointsBehavior\Observer\CheckFirstValidOrder"/>
+    </event>
+    <event name="sales_order_invoice_save_after">
+        <observer name="lof_rewardbehavior_sales_order_invoice_save" instance="\Lof\RewardPointsBehavior\Observer\Frontend\OrderAfterInvoiceSave"/>
+    </event>
+    <event name="sales_order_shipment_save_after">
+        <observer name="lof_rewardbehavior_model_observer_shippment_save" instance="Lof\RewardPointsBehavior\Observer\Frontend\OrderAfterShipmentSave"/>
+    </event>
+</config>

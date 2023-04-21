@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Landofcoder
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Landofcoder.com license that is
+ * available through the world-wide-web at this URL:
+ * http://landofcoder.com/license
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Landofcoder
+ * @package    Lof_RewardPointsBehavior
+ * @copyright  Copyright (c) 2016 Landofcoder (http://www.landofcoder.com/)
+ * @license    http://www.landofcoder.com/LICENSE-1.0.html
+ */
+
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../lib/internal/Magento/Framework/Event/etc/events.xsd">
+    <event name="review_save_commit_after">
+        <observer name="lof_rewardpointsbehavior_review_save_commit_after" instance="\Lof\RewardPointsBehavior\Observer\Backend\ProductReviewSubmited"/>
+    </event>
+    <event name="review_delete_after">
+    	<observer name="lof_rewardpointsbehavior_review_save_commit_after" instance="\Lof\RewardPointsBehavior\Observer\Backend\ReviewDeleteAfter"/>
+    </event>
+    <event name="sales_order_invoice_save_after">
+        <observer name="lof_rewardbehavior_sales_order_invoice_save_commit_after" instance="\Lof\RewardPointsBehavior\Observer\Backend\OrderAfterInvoiceSave"/>
+    </event>
+    <event name="sales_order_shipment_save_after">
+        <observer name="lof_rewardbehavior_model_observer_shippment" instance="Lof\RewardPointsBehavior\Observer\Backend\OrderAfterShipmentSave"/>
+    </event>
+</config>

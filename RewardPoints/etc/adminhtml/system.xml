@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Landofcoder
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Landofcoder.com license that is
+ * available through the world-wide-web at this URL:
+ * http://landofcoder.com/license
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Landofcoder
+ * @package    Lof_RewardPoints
+ * @copyright  Copyright (c) 2016 Landofcoder (https://landofcoder.com/)
+ * @license    https://landofcoder.com/LICENSE-1.0.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+	<system>
+		<section id="lofrewardpoints" translate="label" sortOrder="100"  type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+			<class>separator-top</class>
+			<label>Reward Points</label>
+			<tab>landofcoder</tab>
+			<resource>Lof_RewardPoints::config</resource>
+			<group id="general" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>General Configuration</label>
+				<field id="enable" translate="label comment" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1" >
+					<label>Enable</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="point_label" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+					<label>Point Label</label>
+					<comment><![CDATA[If empty, the default label 'Point' will be used.]]></comment>
+				</field>
+				<field id="points_label" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" >
+					<label>Points Label</label>
+					<comment><![CDATA[If empty, the default label 'Points' will be used.]]></comment>
+				</field>
+				<field id="point_image" translate="label comment" type="image" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Point Image</label>
+					<backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+					<upload_dir config="system/filesystem/media" scope_info="1">lof/rewardpoints</upload_dir>
+					<base_url type="media" scope_info="1">lof/rewardpoints</base_url>
+				</field>
+				<field id="use_policypage" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" >
+					<label>Use Reward Policy page</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="policy_page" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" >
+					<label>Reward Policy page</label>
+					<source_model>Magento\Cms\Model\Config\Source\Page</source_model>
+					<depends><field id="use_policypage">1</field></depends>
+				</field>
+			</group>
+			<group id="display" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Frontend Display Configuration</label>
+				<field id="show_on_listing" translate="label comment" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1" >
+					<label>Show earn points on Products Listing, Products Widget, Products Block</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="show_earning_on_product" translate="label comment" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1" >
+					<label>Show earn points on Product Page</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="show_spending_on_product" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+					<label>Show spending points on Product Page</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="show_on_shopping_cart" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" >
+					<label>Show Use Points Section on Shopping Cart Page</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="show_on_checkout_page" translate="label comment" type="select" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1" >
+					<label>Show Use Points Section on Checkout Page</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+			</group>
+			<group id="earning" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Earning Points Configuration</label>
+				<field id="rounding_method" translate="label comment" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Rounding Method</label>
+					<source_model>Lof\RewardPoints\Model\Config\Source\RoundingMethod</source_model>
+					<comment><![CDATA[E.g: 9.8 points generated from an order can be rounded up to 10 points or down to 9 points]]></comment>
+				</field>
+				<field id="expire" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Points expire after</label>
+					<source_model>Lof\RewardPoints\Model\Config\Source\RoundingMethod</source_model>
+					<validate>validate-greater-than-zero</validate>
+					<comment><![CDATA[day(s) since the transaction date.]]></comment>
+				</field>
+				<field id="is_earn_after_action" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+					<label>Approve earned points on invoice or shipment</label>
+					<source_model>Lof\RewardPoints\Model\Config\Source\EarnActions</source_model>
+				</field>
+                <field id="earn_in_statuses" translate="label" type="multiselect" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Approve earned points if order has status</label>
+                    <source_model>\Lof\RewardPoints\Model\Config\Source\Order\Status</source_model>
+                </field>
+                <field id="is_cancel_after_refund" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Cancel earned points after order refunding</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+				<field id="maximum_points" translate="label comment" type="text" sortOrder="600" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Maximum earning points per order</label>
+					<source_model>Lof\RewardPoints\Model\Config\Source\RoundingMethod</source_model>
+					<comment><![CDATA[The maximum earning points for each order. If empty or zero, there is no limitation]]></comment>
+				</field>
+				<field id="by_tax" translate="label comment" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Allow to earn points from tax</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="by_shipping" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Allow to earn points from shipping fee</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment><![CDATA[Only for earn by Shopping Cart Rules with Action = "Give X% of cart total"]]></comment>
+				</field>
+			</group>
+			<group id="spending" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Spending Points Configuration</label>
+				<field id="maximum_points" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Maximum spending points per order</label>
+					<source_model>Lof\RewardPoints\Model\Config\Source\RoundingMethod</source_model>
+					<comment><![CDATA[The maximum spending points for each order. If empty or zero, there is no limitation]]></comment>
+				</field>
+				<field id="by_tax" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Allow to spend points from tax</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="by_shipping" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Allow to spend points from shipping fee</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="spend_in_statuses" translate="label" type="multiselect" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Approve earned points if order has status</label>
+                    <source_model>\Lof\RewardPoints\Model\Config\Source\Order\Status</source_model>
+                </field>
+			</group>
+			<group id="notification" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="30">
+				<label>Notification Settings</label>
+				<field id="sender_email" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Email Sender</label>
+					<source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+				</field>
+				<field id="balance_update_email_template" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Balance update Email</label>
+					<source_model>\Lof\RewardPoints\Model\System\Config\Source\Email\Template</source_model>
+				</field>
+				<field id="points_expire_email_template" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Points expire Email</label>
+					<source_model>\Lof\RewardPoints\Model\System\Config\Source\Email\Template</source_model>
+				</field>
+				<field id="send_before_expiring_days" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Send notification before points expiring (in days)</label>
+					<comment><![CDATA[[Send notification before points expiring (in days). If empty or zero, no reminder email is sent.]]></comment>
+				</field>
+				<field id="points_expired_email_template" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Balance Expired Email</label>
+					<source_model>\Lof\RewardPoints\Model\System\Config\Source\Email\Template</source_model>
+				</field>
+				<field id="send_referlink_email_template" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Refer Friends Email</label>
+					<source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

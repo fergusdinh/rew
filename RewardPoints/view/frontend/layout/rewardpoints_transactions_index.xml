@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Landofcoder
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Landofcoder.com license that is
+ * available through the world-wide-web at this URL:
+ * http://landofcoder.com/license
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Landofcoder
+ * @package    Lof_RewardPoints
+ * @copyright  Copyright (c) 2016 Landofcoder (https://landofcoder.com/)
+ * @license    https://landofcoder.com/LICENSE-1.0.html
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" label="Customer My Account (All Pages)" design_abstraction="custom">
+	<update handle="rewardpoints_customer_account"/>
+	<head>
+		<title>Transactions History</title>
+	</head>
+	<body>
+		<referenceBlock name="root">
+			<action method="setHeaderTitle">
+				<argument translate="true" name="title" xsi:type="string">Transactions History</argument>
+			</action>
+		</referenceBlock>
+		<referenceBlock name="customer-account-reward-transactions">
+			<arguments>
+				<argument name="is_highlighted" xsi:type="boolean">true</argument>
+			</arguments>
+		</referenceBlock>
+		<referenceContainer name="content">
+			<block class="Lof\RewardPoints\Block\Account\Dashboard\Listing" after="customer_account_navigation_block" name="lrw.account.poitns" template="account/dashboard/listing.phtml" cacheable="false">
+				<arguments>
+					<argument name="limit" xsi:type="string">15</argument>
+				</arguments>
+				<block class="Lof\RewardPoints\Block\Toolbar" name="lrw_toolbar" template="toolbar.phtml">
+					<block class="Magento\Theme\Block\Html\Pager" name="lrw_pager"/>
+				</block>
+			</block>
+		</referenceContainer>
+	</body>
+</page>

@@ -1,0 +1,23 @@
+<?php
+if($this->enableEarningPoints()):
+$helper   = $this->helper('Lof\RewardPoints\Helper\Data');
+$_product = $block->getProduct();
+if($_product->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE):
+
+	$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+	$configProduct = $objectManager->create('Magento\Catalog\Model\Product')->load($_product->getId());
+	if($_product->getPrice() == 0):
+		$_children = $configProduct->getTypeInstance()->getUsedProducts($configProduct);
+		$childPrice = [];
+        foreach ($_children as $child){
+            if($child->getPrice() == $_product->getFinalPrice()){
+            	$_product = $child;
+            }
+        }		 
+	endif;
+endif;
+?>
+<?php if($_product && $_product->getEarningPoints() && $_product->isSaleable()): ?>
+	<div class="lrw-product-points lrw-earning-points product-earning-points" data-basePoint="<?= (float)$_product->getEarningPoints(); ?>"><?= __('Earn %1 for purchasing this product.', $helper->formatPoints($_product->getEarningPoints())) ?></div>
+<?php endif; ?>
+<?php endif; ?>

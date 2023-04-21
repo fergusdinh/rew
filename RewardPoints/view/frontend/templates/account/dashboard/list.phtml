@@ -1,0 +1,23 @@
+<?php
+$collection      = $block->getListReferredCustomer();
+$total           = $collection->count();
+$blockId         = rand().time();
+$grid_pagination = true;
+?>
+<style>
+    .pager {
+        position: relative;
+    }
+    .limiter {
+        right: 0;
+        position: absolute;
+        top: 5px;
+    }
+</style>
+<div>
+    <div class="row lof-rewardpoints">
+        <?php if($grid_pagination){ ?>
+            <?php echo $this->getPagerHtml(); ?>
+        <?php } ?>
+    </div>
+</div>

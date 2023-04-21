@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Landofcoder
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Landofcoder.com license that is
+ * available through the world-wide-web at this URL:
+ * http://landofcoder.com/license
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Landofcoder
+ * @package    Lof_RewardPoints
+ * @copyright  Copyright (c) 2016 Landofcoder (https://landofcoder.com/)
+ * @license    https://landofcoder.com/LICENSE-1.0.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../lib/internal/Magento/Framework/Event/etc/events.xsd">
+    <event name="catalog_product_collection_load_after">
+        <observer name="lof_rewardpoints_product_collection_load_after" instance="\Lof\RewardPoints\Observer\ProductCollectionLoadAfter"/>
+    </event>
+    <event name="customer_login">
+        <observer name="lof_rewardpoints_customer_login" instance="\Lof\RewardPoints\Observer\CustomerLogin"/>
+    </event>
+    <event name="sales_order_save_after">
+        <observer name="lof_rewardpoints_checkout_success" instance="\Lof\RewardPoints\Observer\OrderCheckoutSuccess"/>
+    </event>
+    <event name="controller_action_postdispatch_catalog_product_view">
+        <observer name="lof_rewardpoints_catalog_product_view" instance="\Lof\RewardPoints\Observer\ProductView"/>
+    </event>
+    <event name="controller_action_postdispatch_checkout_cart_configure">
+        <observer name="lof_rewardpoints_checkout_cart_configure" instance="\Lof\RewardPoints\Observer\ProductView"/>
+    </event>
+    <event name="sales_quote_save_after">
+        <observer name="lof_rewardpoints_sales_quote_save_after" instance="\Lof\RewardPoints\Observer\SalesQuoteSaveAfter"/>
+    </event>
+    <event name="checkout_cart_add_product_complete">
+        <observer name="lof_rewardpoints_sales_quote_save_after" instance="\Lof\RewardPoints\Observer\CartAddProductComplete"/>
+    </event>
+    <event name="sales_quote_remove_item">
+        <observer name="lof_rewardpoints_sales_quote_remove_item" instance="\Lof\RewardPoints\Observer\SalesQuoteRemoveItem"/>
+    </event>
+    <event name="controller_action_postdispatch_checkout">
+        <observer name="lof_rewardpoints_checkout_cart_index" instance="\Lof\RewardPoints\Observer\CheckoutCartIndex"/>
+    </event>
+    <event name="controller_action_postdispatch_sales_order_reorder">
+        <observer name="lof_rewardpoints_sales_order_reorder" instance="\Lof\RewardPoints\Observer\SalesOrderReorder"/>
+    </event>
+</config>

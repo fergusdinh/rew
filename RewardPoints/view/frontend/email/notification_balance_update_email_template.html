@@ -1,0 +1,19 @@
+<!--@subject Your balance at {{var store.getFrontendName()}} has been updated@-->
+
+{{template config_path="design/email/header_template"}}
+
+{{depend message}}
+    {{var message|raw}}
+{{/depend}}
+{{depend no_message}}
+    <p>Dear {{var customer.name}},</p>
+    <p>Your account balance has been updated at <a href="{{store url=""}}">{{var store.getFrontendName()}}</a>.</p>
+    Message: {{var title}}<br/>
+    Balance Update: <b>{{var transaction_amount}}</b><br/>
+    Balance Total: <b>{{var balance_total}}</b><br/>
+    <br/>
+    Thank you,<br/>
+    <strong>{{var store.getFrontendName()}}</strong>
+{{/depend}}
+
+{{template config_path="design/email/footer_template"}}

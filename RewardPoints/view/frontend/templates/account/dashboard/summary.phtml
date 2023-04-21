@@ -1,0 +1,47 @@
+<?php
+$rewardsData       = $this->helper('Lof\RewardPoints\Helper\Data');
+$rewardsCustomer   = $block->getCustomer();
+$totalPoints       = $rewardsCustomer->getTotalPoints();
+$transactionExpire = $rewardsCustomer->getTransactionExpire();
+$expirePointsInfo  = $rewardsCustomer->getExpirePointsInfo();
+$earningRules      = $block->getEarningRule();
+$spendingRules     = $block->getSpendingRule();
+
+?>
+<div class="block lrw-block lrw-account-summary">
+	<div class="block-title">
+		<strong><?php echo $block->getTitle()?$block->getTitle():__('Rewards Information'); ?></strong>
+	</div>
+	<div class="block-content">
+		<div class="lrw-account-points"><?php echo __('Your balance is <strong>%1</strong>', $rewardsData->formatPoints($totalPoints, true, true)); ?></div>
+		<div class="lrw-instruction">
+			<?php if($earningRules->count()) { ?>
+			<div id="earn-points" class="lrw-earn-instruction">
+				<div class="lrw-instruction-title"><?php echo __('How to earn points'); ?></div>
+				<p><?php echo __('Points will be added to your reward balance after buy product, checkout order.'); ?></p>
+				<ul>
+					<?php foreach ($earningRules as $rule) { ?>
+					<li>
+						<div class="lrw-rule-name"><?php echo $rule->getName();
+						?>
+
+						</div>
+						<?php if (@trim($rule->getDescription())) { ?>
+						<div class="lrw-rule-description"><?php echo  ': ' . $rewardsData->filter($rule->getDescription()) ?></div>
+						<?php } ?>
+						<?php if($rule->getAction() == 'refer_friend') {?>
+							<a target="_blank" href="<?php echo $this->getUrl('rewardpointsbehavior/account/create') . 'refer/' . $rewardsCustomer->getData('customer_id'); ?>"><?php echo $this->getUrl('rewardpointsbehavior/account/create').'refer/'.$rewardsCustomer->getCustomerId(); ?></a>
+						<?php	} ?>
+					</li>
+					<?php } ?>
+				</ul>
+			</div>
+			<?php } ?>
+		</div>
+		<?php if ($expirePointsInfo && $expirePointsInfo['points'] && $expirePointsInfo['days'] < 30) { ?>
+		<div class="lrw-messages">
+			<div class="lrw-message lrw-message-warning"><?php echo __('%1 will expire in %2 day(s)', $rewardsData->formatPoints($expirePointsInfo['points']), $expirePointsInfo['days']) ?></div>
+		</div>
+		<?php } ?>
+	</div>
+</div>

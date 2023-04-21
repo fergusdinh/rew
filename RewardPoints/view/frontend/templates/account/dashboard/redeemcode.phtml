@@ -1,0 +1,15 @@
+<form action="<?php echo $block->getApplyCodeUrl(); ?>" method="post" data-mage-init='{"validation":{}}'>
+	<div class="fieldset lrw-code">
+		<div class="field">
+			<label class="label">
+				<span><?php echo __('Enter your reward code:'); ?></span>
+			</label>
+			<div class="control">
+				<input type="text" data-validate="{required:true}" class="input-text required-entry" id="lrw-reward-code" name="code" />
+				<button class="button lrw-button" id="lrw-applycode" value="<?php echo __('Apply Code'); ?>">
+					<span><?php echo __('Apply Code'); ?></span>
+				</button>
+			</div>
+		</div>
+	</div>
+</form>

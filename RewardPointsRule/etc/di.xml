@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Landofcoder
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Landofcoder.com license that is
+ * available through the world-wide-web at this URL:
+ * http://landofcoder.com/license
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Landofcoder
+ * @package    Lof_RewardPointsRule
+ * @copyright  Copyright (c) 2016 Landofcoder (http://www.landofcoder.com/)
+ * @license    http://www.landofcoder.com/LICENSE-1.0.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="rewardpointsrule_earning_listing_data_source" xsi:type="string">Lof\RewardPointsRule\Model\ResourceModel\Earning\Grid\Collection</item>
+				<item name="rewardpointsrule_spending_listing_data_source" xsi:type="string">Lof\RewardPointsRule\Model\ResourceModel\Spending\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+
+	<type name="Lof\RewardPointsRule\Model\ResourceModel\Earning\Grid\Collection">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">lof_rewardpoints_earning_rule</argument>
+			<argument name="eventPrefix" xsi:type="string">rewardpointsrule_earning_grid_collection</argument>
+			<argument name="eventObject" xsi:type="string">earning_grid_collection</argument>
+			<argument name="resourceModel" xsi:type="string">Lof\RewardPointsRule\Model\ResourceModel\Earning</argument>
+		</arguments>
+	</type>
+
+	<type name="Lof\RewardPointsRule\Model\ResourceModel\Spending\Grid\Collection">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">lof_rewardpoints_spending_rule</argument>
+			<argument name="eventPrefix" xsi:type="string">rewardpointsrule_spending_grid_collection</argument>
+			<argument name="eventObject" xsi:type="string">spending_grid_collection</argument>
+			<argument name="resourceModel" xsi:type="string">Lof\RewardPointsRule\Model\ResourceModel\Spending\Rule</argument>
+		</arguments>
+	</type>
+</config>

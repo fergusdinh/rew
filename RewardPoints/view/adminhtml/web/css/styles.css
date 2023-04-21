@@ -1,0 +1,188 @@
+.lrw-product-points {
+    font-size: 12px;
+    color: #F96B25;
+}
+
+.product-item-info .lrw-product-points {
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+}
+
+.lrw-status-complete {
+    color: #1AA941;
+}
+
+.lrw-status-complete.red {
+    color: #BB1212;
+}
+
+.lrw-status-processing {
+    color: #F96B25;
+}
+
+.lrw-status {
+    background: #feeee1 none repeat scroll 0 0;
+    border: 1px solid #ed4f2e;
+    color: #ed4f2e;
+    display: block;
+    font-weight: bold;
+    line-height: 17px;
+    padding: 0 3px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.lrw-status.lrw-status-complete, .lrw-status.lrw-status-sent {
+    background: #d0e5a9 none repeat scroll 0 0;
+    border-color: #5b8116;
+    color: #185b00;
+}
+
+.lrw-status.lrw-status-processing {
+    background: #feddcd none repeat scroll 0 0;
+    border-color: #F96B25;
+    color: #F96B25;
+}
+
+.lrw-status.lrw-status-canceled, .lrw-status.lrw-status-failed {
+    background: #f9d4d4 none repeat scroll 0 0;
+    border-color: #e22626;
+    color: #e22626;
+}
+
+.lrw-status-canceled {
+    color: #e22626;
+}
+
+.lrw-account-summary .lrw-message {
+    background: #ECFDFF;
+    padding: 10px;
+}
+
+.lrw-social-buttons .lrw-social-button {
+    display: inline-block;
+}
+
+.lrw-product-points.lrw-spending-points {
+    margin: 10px 0 25px;
+}
+
+.lrw-points .control {
+    position: relative;
+}
+
+.lrw-points .control .button {
+    position: absolute;
+    top: 0;
+    right: 0
+}
+
+.lrw-points .input-box {
+    margin-top: 10px
+}
+
+.rewardpoints-transaction-edit .lrw-status-complete {
+    font-weight: bold
+}
+
+#edit_form .admin__field-tooltip {
+    width: 25px;
+    float: none;
+}
+
+#edit_form .admin__field-tooltip .admin__field-tooltip-content {
+    width: 400px;
+    right: -3rem;
+    bottom: 4.1rem;
+}
+
+.lrw-email-message {
+    border: 1px solid #cac3b4;
+    float: left
+}
+
+.lrw-email-message .wrapper-inner {
+    padding-bottom: 0 !important;
+}
+
+.rewardpoints-earning-edit .admin__field-tooltip .admin__field-tooltip-action {
+    margin-left: 5px;
+    height: 27px;
+}
+
+.lrw-guide input[type="text"] {
+    width: calc(100% - 30px);
+    float: left;
+    margin-right: 5px;
+}
+
+.lrw-guide select {
+    float: left;
+    margin-right: 5px;
+}
+
+.lrw-guide .admin__field-tooltip-action {
+    margin-left: 0
+}
+
+.field .lrw-guide .note {
+    float: left;
+    width: 100%;
+}
+
+.lrw-usepoints select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background: #fff url(../images/select-bg.svg) no-repeat 100% 45%;
+    background-size: 30px 60px;
+    border: 1px solid #ccc;
+    height: 32px;
+    text-indent: .01em;
+    text-overflow: '';
+    line-height: 1.42857143;
+    padding: 5px 10px 4px;
+    vertical-align: baseline;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 1px;
+    margin: 5px 0 10px 0;
+}
+
+.lrw-usepoints .fieldset.lrw-points {
+    margin-top: 5px
+}
+.lrw-usepoints{
+    margin-bottom: 40px
+}
+.lrw-slider .ui-slider-handle{
+    background: #f98b25
+}
+.lrw-message{
+    color: #ff5501;
+}
+.lrw-message:before {
+    background: none;
+    border: 0;
+    color: #ff5501;
+    content: "\e602";
+    font-family: 'luma-icons';
+    font-size: 1.9rem;
+    font-style: normal;
+    font-weight: 400;
+    height: auto;
+    left: 1.9rem;
+    line-height: inherit;
+    margin-top: -1.3rem;
+    position: absolute;
+    speak: none;
+    text-shadow: none;
+    top: 50%;
+    width: auto;
+}
+
+.admin__scope-old .lrw-guide label.mage-error {
+    width: 100%;
+    float: left;
+}

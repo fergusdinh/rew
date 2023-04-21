@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Landofcoder
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Landofcoder.com license that is
+ * available through the world-wide-web at this URL:
+ * http://landofcoder.com/license
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Landofcoder
+ * @package    Lof_RewardPointsBehavior
+ * @copyright  Copyright (c) 2016 Landofcoder (http://www.landofcoder.com/)
+ * @license    http://www.landofcoder.com/LICENSE-1.0.html
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<referenceContainer name="content">
+			<block class="Lof\RewardPointsBehavior\Block\Buttons" name="lrw.social.buttons" before="-" template="buttons.phtml">
+				<block class="Lof\RewardPointsBehavior\Block\Buttons\Facebook\Like" name="buttons.facebook.like" as="facebook.like" template="buttons/facebook/like.phtml" />
+				<block class="Lof\RewardPointsBehavior\Block\Buttons\Facebook\Like" name="buttons.facebook.share" as="facebook.share" template="Lof_RewardPointsBehavior::buttons/facebook/share.phtml" />
+				<block class="Lof\RewardPointsBehavior\Block\Buttons\Twitter\Tweet" name="buttons.twitter" as="twitter.tweet" template="buttons/twitter/tweet.phtml"/>
+				<block class="Lof\RewardPointsBehavior\Block\Buttons\Pinterest\Pin" name="buttons.pinterest" as="pinterest.pin" template="buttons/pinterest/pin.phtml"/>
+				<block class="Lof\RewardPointsBehavior\Block\Buttons\Googleplus\Like" name="buttons.googleplus" as="googleplus.like" template="buttons/googleplus/like.phtml"/>
+			</block>
+		</referenceContainer>
+		<referenceContainer name='before.body.end'>
+			<block class="Lof\RewardPointsBehavior\Block\Buttons\Facebook\Like" name="lrw.fb.scripts" template="scripts.phtml" />
+		</referenceContainer>
+	</body>
+</page>

@@ -1,0 +1,27 @@
+{
+  "name": "landofcoder/module-rewardpoints",
+  "description": "Magento 2 Reward Points - Loyalty extension",
+  "require": {
+    "landofcoder/module-all" : "1.*"
+  },
+  "type": "magento2-module",
+  "homepage": "https://landofcoder.com",
+  "authors": [
+    {
+        "name": "Landofcoder",
+        "email": "landofcoder@gmail.com",
+        "role": "Magento 2 Lof Reward Points Extension"
+    }
+  ],
+  "version": "1.0.4",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "autoload": {
+    "files": [ "registration.php" ],
+    "psr-4": {
+      "Lof\\RewardPoints\\": ""
+    }
+  }
+}

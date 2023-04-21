@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<head>
+		<css src="Lof_RewardPoints::css/styles.css" />
+		<css src="Lof_RewardPoints::css/slider.css" />
+	</head>
+	<body>
+		<referenceBlock name="data">
+			<block class="Lof\RewardPoints\Block\Adminhtml\Order\Create\Totals" template="Magento_Sales::order/create/totals.phtml" name="totals"/>
+		</referenceBlock>
+		<referenceContainer name="before.body.end">
+			<block name="lof-rewardpoints" class="Magento\Backend\Block\Template" template="Lof_RewardPoints::js.phtml" />
+		</referenceContainer>
+	</body>
+</page>

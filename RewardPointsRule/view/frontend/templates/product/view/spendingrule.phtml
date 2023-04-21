@@ -1,0 +1,108 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/* @var $block \Magento\Wishlist\Block\Link */
+$helper   = $this->helper('Lof\RewardPoints\Helper\Data');
+$show_spending_rule = $helper->getConfig()->getConfig("display/show_spending_on_product");
+if($show_spending_rule){
+?>
+<script>
+    window.checkoutConfig            = <?php echo \Zend_Json::encode($block->getRewardSlider()) ?>;
+    window.rewardsprogressbar        = {steps:20};
+    window.isCustomerLoggedIn        = <?php echo $block->isCustomerLoggedIn()?'true':'false'; ?>;
+    window.checkoutConfig.totalsData = [];
+</script>
+<div class="lrw-product-usepoints" data-bind="scope: 'rewardrules'">
+<!-- ko if: isLoggedIn -->
+    <div id="block-lrwuserpoints-summary" class="content" data-role="content" aria-labelledby="block-lrwuserpoints-heading">
+        <div class="lrw-usepoints">
+            <span>
+                <!-- ko i18n: 'You have '--><!-- /ko --><strong data-bind="text: availablePoints"></strong> <strong data-bind="text: pointsLabel"></strong> <!-- ko i18n: 'available.'--><!-- /ko -->
+            </span>
+            <div class="fieldset lrw-points">
+                <div class="field">
+                    <span><!-- ko i18n: 'Choose how many points to spend'--><!-- /ko --></span>
+                    <div class="control">
+                        <select data-bind="options: getRules(), optionsValue: 'id',optionsText: 'name', value: selectedRule, event: {change: changeRule} ">
+                        </select>
+                        <div class="lrw-message" data-bind="if: ruleMessage">
+                            <span class="lrw-message-warning" data-bind="html: ruleMessage"></span>
+                        </div>
+                    </div>
+                    <div class="control" data-bind="visible: showSlide">
+                        <div class="lrw-slider">
+                            <div id="lrw-slider" data-bind="rewardslider: slide, event: {change: changeSlide}"></div>
+                        </div>
+                        <div class="lrw-slider-input">
+                            <span><!-- ko i18n: 'You will spend '--><!-- /ko --></span>
+                            <input name="slider-num" data-bind="textInput: points, event: {change: changePoints}" class="slider-num" type="text" />
+                            <span data-bind="text: pointsLabel"></span>
+                        </div>
+                        <div class="input-box">
+                            <input type="checkbox" data-bind="checked: selected, click: useMaxPoints" />
+                            <label for="useallpoints" class="useallpoints">
+                                <!-- ko i18n: 'Use maximum '--><!-- /ko --><span data-bind="text: maxPoints"></span> <span data-bind="text: pointsLabel"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "rewardrules": {
+                        "component": "Lof_RewardPoints/js/view/cart/use_rewardpoints"
+                    }
+                }
+            }
+        }
+    }
+</script>
+<script>
+require([
+    'jquery',
+    'Lof_RewardPoints/js/rewardsprice',
+    'mage/translate'
+], function($) {
+    var priceBoxes = $('[data-role=priceBox]');
+    var rewardsprice = $('[data-role=priceBox]').rewardsprice({
+        'priceConfig': <?php echo $block->getJsonConfig() ?>,
+        'formatPoints': '<?php echo $block->getPointsLabel(); ?>'
+    }).data("lof-rewardsprice");
+    if(priceBoxes.length) {
+        $('.lrw-product-spendpoints').on('change', function() {
+            var discount = $('.lrw-product-fulldiscount').val();
+            var value = $(this).val();
+            rewardsprice.updateDiscount(discount);
+            rewardsprice.updatePoints(value);
+        });
+    }
+    $('#product-addtocart-button').click(function(){
+        var qty = $('#qty').val();
+        var spendPoints = $('.lrw-product-spendpoints').val();
+        var avaiablePoints = $('.lrw-available-points').val();
+        console.log(spendPoints);
+        console.log(avaiablePoints);
+        if(avaiablePoints){
+            if (qty*spendPoints <= avaiablePoints) {
+                return true;
+            } else {
+                alert($.mage.__('You don\'t have enough points to buy full products.', qty));
+                return false;
+            }
+        }
+    });
+});
+</script>
+<?php } ?>

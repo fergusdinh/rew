@@ -1,0 +1,334 @@
+.field .lrw-button {
+    background: #F96B25;
+    color: #FFF;
+    border-color: #F96B25;
+    box-shadow: none;
+}
+
+.field .lrw-button:hover {
+    background: #f95706
+}
+
+.lrw-code .control {
+    position: relative;
+    max-width: 500px;
+}
+
+.lrw-code .control button {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.lrw-code .control input:focus {
+    border-color: #F96B25;
+    outline: none;
+    box-shadow: none;
+}
+
+.lrw-product-points {
+    color: #F96B25;
+}
+
+.widget.block .product-item-info .lrw-product-points {
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+.lrw-account-summary-listing .green {
+    color: #1AA941;
+}
+
+.lrw-account-summary-listing .red {
+    color: #BB1212;
+}
+
+.lrw-social-buttons .lrw-social-button {
+    display: inline-block;
+}
+.widget.block .lrw-product-points.lrw-spending-points,
+.lrw-product-points.lrw-spending-points {
+    margin: 10px 0 25px;
+}
+
+.lrw-points .control {
+    position: relative;
+}
+
+.lrw-points .control .button {
+    position: absolute;
+    top: 0;
+    right: 0
+}
+
+.lrw-points .input-box {
+    margin-top: 10px
+}
+
+.lrw-points select{
+    margin-top: 5px;
+}
+.lrw-points select:focus{
+    border-color:#ff5501;
+    outline: none;
+    box-shadow: none;
+}
+#lrw-spending-rules {
+    margin-bottom: 10px;
+}
+
+.lrw-points-spent {
+    margin-top: 10px;
+}
+
+.lrw-points-spent .label {
+    font-weight: bold;
+    color: #1979c3;
+}
+
+@media (min-width: 768px) {
+    .product-info-price .price-box .lrw-product-points.lrw-spending-points.price {
+        font-size: 24px;
+        font-weight: normal;
+    }
+}
+
+.lrw-status-expired, .lrw-status-canceled {
+    color: #e22626;
+}
+
+.lrw-status-processing {
+    color: #F96B25;
+}
+
+.lrw-status-complete {
+    color: #1AA941;
+}
+
+.lrw-toplink {
+    width: 100%
+}
+
+.lrw-toplink span {
+    margin-right: 2px
+}
+
+.lrw-toplink img {
+    position: absolute;
+}
+
+.lrw-messages {
+    background: #fffbbb;
+    border: none;
+    border-radius: 0;
+    color: #333;
+    font-size: 1.4rem;
+    margin: 0 0 1px;
+    padding: 1.8rem 4rem 1.8rem 5.5rem;
+    position: relative;
+    text-shadow: none;
+    display: block;
+}
+.lrw-message{
+    position: relative
+}
+.lrw-message-warning:before {
+    background: none;
+    border: 0;
+    color: #ff5501;
+    content: "\e602";
+    font-family: 'luma-icons';
+    font-size: 1.9rem;
+    font-style: normal;
+    font-weight: 400;
+    height: auto;
+    left: 1.9rem;
+    line-height: inherit;
+    margin-top: -1.3rem;
+    position: absolute;
+    speak: none;
+    text-shadow: none;
+    top: 50%;
+    width: auto;
+}
+
+.lrw-message {
+    position: relative;
+}
+
+.lrw-account-points {
+    margin-bottom: 15px;
+}
+
+.lrw-rewardcode {
+    border: 3px dashed #eee;
+    padding: 1.5rem 4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: #fff;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.lrw-code {
+    font-size: 16px;
+    font-weight: bold;
+    background: #fff;
+    padding: 0 1rem;
+}
+/** PRODUCT PAGE */
+.lrw-spending-points.price {
+    font-weight: normal;
+}
+
+/** CUSTOMER DASHBOARD **/
+#earn-points,
+#spend-points{
+    float: left;
+    width: 100%;
+    margin-top: 10px
+}
+.lrw-customer-points img {
+    margin-left: 2px;
+}
+
+.lrw-instruction ul {
+    padding-left: 10px;
+    list-style: none;
+}
+
+.lrw-instruction ul li {
+    padding-left: 20px;
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+.lrw-instruction ul li:before {
+    content: ".";
+    position: absolute;
+    left: 0;
+    color: #ff5501;
+    font-size: 40px;
+    top: -2px;
+    line-height: 0;
+}
+
+.lrw-instruction .lrw-instruction-title {
+    text-transform: uppercase;
+    color: #ff5501;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.lrw-instruction .lrw-rule-name{
+    font-weight: bold;
+    float: left;
+    margin-right: 5px
+}
+.lrw-account-summary .lrw-messages{
+    position: relative;
+    clear: both;
+}
+.lrw-account-summary .lrw-message-warning:before {
+    left: 20px;
+}
+.lrw-account-summary .lrw-messages .lrw-message{
+    position: static;
+}
+
+.fieldset.lrw-code > .field > label {
+    font-weight: normal;
+}
+
+
+
+/** CHECKOUT **/
+.lrw-usepoints .lrw-message-warning:before{
+    top: 10px;
+    left: 10px;
+    position: static;
+    margin-right: 5px
+}
+.lrw-points{
+    margin-top: 5px
+}
+.lrw-usepoints .lrw-message-warning {
+    color: #ff5501;
+    padding: 10px 0;
+}
+.lrw-points-spent-message ul{
+    padding-left: 20px
+}
+#block-lrwuserpoints {
+    position: relative
+}
+#block-lrwuserpoints .title{
+    cursor: pointer
+}
+#block-lrwuserpoints.active > .title:after {
+    content: '\e621';
+}
+
+#block-lrwuserpoints .title:after {
+    -webkit-font-smoothing: antialiased;
+    font-size: 12px;
+    line-height: 12px;
+    color: inherit;
+    content: '\e622';
+    font-family: 'luma-icons';
+    margin: 3px 0 0;
+    vertical-align: middle;
+    display: inline-block;
+    font-weight: normal;
+    overflow: hidden;
+    speak: none;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+.checkout-cart-index #block-lrwuserpoints .title {
+    border-top: 0;
+}
+.checkout-cart-index .lrw-rewardpoints{
+    border-bottom: 1px solid #ccc
+}
+.checkout-cart-index .lrw-rewardpoints .mark{
+    padding-bottom: 0
+}
+.checkout-cart-index .cart-totals{
+    padding-top: 0
+}
+
+/** PRODUCT PAGE */
+.lrw-product-usepoints {
+    display: none;
+}
+
+.lrw_share_fb{
+    border-radius: 3px;
+    font-size: 11px;
+    padding: 1px 2px 2px 2px;
+    font-weight: bold;
+    background: #4267b2;
+    border: 1px solid #4267b2;
+    color: #fff;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    -webkit-user-select: none;
+    white-space: nowrap;
+    font-family: Helvetica, Arial, sans-serif;
+    vertical-align: middle;
+    display: inline-block;
+}
+.lrw_share_fb:hover{
+    background: #365899;
+    border: 1px solid #365899;
+}
+.lrw-social-buttons .lrw-social-button {
+    display: inline-block;
+    vertical-align: top;
+}
+.lrw-social-buttons .lrw-twitter-tweet, .lrw-social-buttons .lrw-google-like{padding: top 1px;}

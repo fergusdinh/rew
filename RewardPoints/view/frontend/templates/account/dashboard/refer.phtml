@@ -1,0 +1,135 @@
+<?php
+$rewardsData       = $this->helper('Lof\RewardPoints\Helper\Data');
+$rewardsCustomer   = $block->getCustomer();
+$totalPoints       = $rewardsCustomer->getTotalPoints();
+$transactionExpire = $rewardsCustomer->getTransactionExpire();
+$expirePointsInfo  = $rewardsCustomer->getExpirePointsInfo();
+$earningRules      = $block->getEarningRule();
+$referCustomer     = $block->getListReferredCustomer();
+?>
+<div class="block lrw-block lrw-account-summary">
+    <div class="block-title">
+        <strong><?php echo $block->getTitle()?$block->getTitle():__('Referred Information'); ?></strong>
+    </div>
+    <div class="block-content">
+        <div class="lrw-instruction">
+            <?php if($earningRules->count()) { ?>
+                <div id="earn-points" class="lrw-earn-instruction">
+                    <div class="lrw-instruction-title"><?php echo __('How to earn points'); ?></div>
+                    <ul>
+                        <?php foreach ($earningRules as $rule) { ?>
+                            <?php if($rule->getReferredPoints()) :?>
+                            <p><?php echo __(' For Referred Customer register account successfully or any first valid order placed by referred friends, you earn: '); ?><strong><?php echo $rule->getEarnPoints()?></strong> <strong><?php echo __('points')?></strong> </p>
+                            <p><?php echo __(' For your friends register account successfully or place first valid order, your friends earn:  '); ?><strong><?php echo $rule->getReferredPoints()?></strong> <strong><?php echo __('points')?></strong> </p>
+                           <?php endif;?>
+                            <li>
+                                <div class="lrw-rule-name"><?php echo $rule->getName();
+                                    ?>
+                                </div>
+                                <?php if (trim($rule->getDescription())) { ?>
+                                    <div class="lrw-rule-description"><?php echo  ': ' . $rewardsData->filter($rule->getDescription()) ?></div>
+                                <?php } ?>
+                                <?php if($rule->getAction() == 'refer_friend') {?>
+                                    <a target="_blank" href="<?php echo $this->getUrl('rewardpointsbehavior/account/create') . 'refer/' . $rewardsCustomer->getData('customer_id'); ?>"><?php echo $this->getUrl('rewardpointsbehavior/account/create').'refer/'.$rewardsCustomer->getCustomerId(); ?></a>
+                                <?php	} ?>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </div>
+            <?php } ?>
+        </div>
+        <?php if ($expirePointsInfo && $expirePointsInfo['points'] && $expirePointsInfo['days'] < 30) { ?>
+            <div class="lrw-messages">
+                <div class="lrw-message lrw-message-warning"><?php echo __('%1 will expire in %2 day(s)', $rewardsData->formatPoints($expirePointsInfo['points']), $expirePointsInfo['days']) ?></div>
+            </div>
+        <?php } ?>
+    </div>
+    <hr>
+    <div class="lrw-instruction">
+        <div class ="lrw-instruction-title"><?php echo __('Share Referring link: ')?></div>
+        <form style="width: 70%" action ="#" method="get" data-hasrequired="<?php echo __('* Required Fields') ?>" data-mage-init='{"validation":{}}' enctype="multipart/form-data">
+            <input name ="form_key" type="hidden" value="<?php /* @escapeNotVerified */ echo $block->getFormKey(); ?>" />
+            <div  style="width: 70%" class="form-group">
+                <label for="share_title"> <?php echo __('Sharing Title(may not be used) : ')?> </label>
+                <input name ="share_title" type="text" class="form-control" id="share_title">
+            </div>
+            <div class="form-group">
+                <label for="share_text"> <?php echo __('Sharing Text(may not be used) : ')?></label>
+                <textarea name ="share_text" style="height: 300px;" type="textarea" class="form-control" id="share_text"> </textarea>
+            </div>
+            <div class="form-group">
+                <label for="name"> <?php echo __('Friend\'s name')?><strong style = "color: red;"> *</strong> : </label>
+                <input name ="name" required type="text" class="form-control" id="name">
+            </div>
+            <div class="form-group">
+                <label for="email"><?php echo __('Friend\'s email address')?><strong style = "color: red;"> * </strong>:</label>
+                <input name ="email" required type="email" class="form-control" id="email">
+            </div>
+            <p style="color:red;"><?php echo __('* Required Fields') ?></p>
+            <a href="javascriot:;" name="submit" id="sharelink" class="action primary btn btn-default"><strong><?php echo __('Submit')?></strong></a>
+        </form>
+    </div>
+    <script type="text/javascript">
+        require(['jquery'], function($){
+            $("#sharelink").click(function(){
+                var title=$('#share_title').val();
+                var text=$('#share_text').val();
+                var name=$('#name').val();
+                var email=$('#email').val();
+                var requesttype='sharelinkinfo';
+                jQuery.ajax({
+                    showLoader: true,
+                    url: "<?php echo $block->getShareLinkUrl()?>",
+                    type: "POST",
+                    data: {title:title,text:text,name:name,email:email,link:"<?php echo $this->getUrl('rewardpointsbehavior/account/create') . 'refer/' . $rewardsCustomer->getData('customer_id'); ?>",requesttype:requesttype},
+                    success: function(response){
+                        location.reload(true);
+                    }
+                });
+            });
+        });
+    </script>
+    <hr>
+
+    <div class ="lrw-instruction">
+        <div class ="lrw-instruction-title"><?php echo __('List Referred Customers: ') ?></div>
+        <?php if($referCustomer->getData()):?>
+        <table class="table-bordered">
+            <thead>
+            <tr>
+                <th><?php echo __('Fullname')?></th>
+                <th><?php echo __('Email')?></th>
+                <th><?php echo __('First Order')?></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach($referCustomer as $refer): ?>
+                <?php 
+                $refered_email = $refer['refered_email'];
+                $refered_email_arr = explode("@",$refered_email);
+                $email_name = $refered_email_arr[0];
+                $email_domain = $refered_email_arr[1];
+                $email_name_length = strlen($email_name);
+                $email_name_replace = "";
+                for($i = 1; $i <= $email_name_length; $i++){
+                    $email_name_replace .= '*';
+                }
+                $refered_email_replace = $email_name_replace.'@'.$email_domain;
+                ?>
+            <tr>
+                <td><?php echo $refer['referred_name']?></td>
+                <td><?php echo $refered_email_replace?></td>
+                <?php if($refer['first_order'] == 1) :?>
+                <td><?php echo __('Yes')?></td>
+                <?php else:?>
+                <td><?php echo __('No')?></td>
+                <?php endif;?>
+            </tr>
+            <?php endforeach;?>
+            </tbody>
+        </table>
+        <?php else:?>
+        <p class="message message-warning"><?= __('There aren\'t referred customers')?></p>
+        <?php endif;?>
+    </div>
+</div>

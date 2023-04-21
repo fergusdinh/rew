@@ -1,0 +1,416 @@
+Reward Points Information,Reward Points Information
+- Plesase Select -,- Plesase Select -
+-- Please Select --,-- Please Select --
+[Customer ID: %1] Account points is not enough points to create a transaction.,[Customer ID: %1] Account points is not enough points to create a transaction.
+[GLOBAL],[GLOBAL]
+[ID: %1] Account points is not enough points to delete transaction,[ID: %1] Account points is not enough points to delete transaction
+[STORE VIEW],[STORE VIEW]
+[WEBSITE],[WEBSITE]
+%1 Item(s),%1 种
+%1 need to earn more %1 to use this rule.,%1 need to earn more %1 to use this rule.
+%1 off,%1 off
+%1 Used,%1 Used
+%1 will expire in %2 day(s),%1 将在 %2 天后过期
+"<a href=""%1"">%2</a>","<a href=""%1"">%2</a>"
+"<a href=""%1"">View</a>","<a href=""%1"">View</a>"
+"<a href=""http://landofcoder.com"" target=""_BLANK"" title=""""Magento Marketplace, Opencart Marketplace, Magento 2 Extension, Free Magento Extension, Opencart Advanced Reports"">landofcoder.com</a>","<a href=""http://landofcoder.com"" target=""_BLANK"" title=""""Magento Marketplace, Opencart Marketplace, Magento 2 Extension, Free Magento Extension, Opencart Advanced Reports"">landofcoder.com</a>"
+<b>%1</b> have <b>%2</b> available.,<b>%1</b> have <b>%2</b> available.
+<b>%1</b> will spend ,<b>%1</b> will spend 
+"<img src=""%1"" alt=""Reward Points""/>","<img src=""%1"" alt=""Reward Points""/>"
+"<span style=""font-size: 1.4rem; font-weight: bold"">[' . . ']</span>","<span style=""font-size: 1.4rem; font-weight: bold"">[' . . ']</span>"
+"<strong>You can use the following variables:</strong><br/>
+                    {{var customer.name}} - customer name<br/>
+                    {{var customer.totalpoints}} - customer total points<br/>
+                    {{store url =""""}} - store URL<br/>
+                    {{var store.getFrontendName()}} - store name<br/>
+                    {{var transaction_amount}} - formatted amount of current transaction (e.g 10 Rewards Points)<br/>
+                    {{var balance_total}} - formatted balance of customer account (e.g. 100 Rewards Points)<br/>
+                    Leave empty to use default notification email.<br/><br/><strong>Example:</strong><br/>
+                    Dear {{var customer.name}},<br>
+                    <p>Your account balance has been updated at <a href=""{{store url=""""}}"">{{var store.getFrontendName()}}</a>. </p>
+                    Balance Update: <b>{{var transaction_amount}}</b><br>
+                    Message: {{var transaction_comment}}<br>
+                    Balance Total: <b>{{var balance_total}}</b><br>
+                    <br>
+                    Thank you,<br>
+                    <strong>{{var store.getFrontendName()}}</strong>","<strong>You can use the following variables:</strong><br/>
+                    {{var customer.name}} - customer name<br/>
+                    {{var customer.totalpoints}} - customer total points<br/>
+                    {{store url =""""}} - store URL<br/>
+                    {{var store.getFrontendName()}} - store name<br/>
+                    {{var transaction_amount}} - formatted amount of current transaction (e.g 10 Rewards Points)<br/>
+                    {{var balance_total}} - formatted balance of customer account (e.g. 100 Rewards Points)<br/>
+                    Leave empty to use default notification email.<br/><br/><strong>Example:</strong><br/>
+                    Dear {{var customer.name}},<br>
+                    <p>Your account balance has been updated at <a href=""{{store url=""""}}"">{{var store.getFrontendName()}}</a>. </p>
+                    Balance Update: <b>{{var transaction_amount}}</b><br>
+                    Message: {{var transaction_comment}}<br>
+                    Balance Total: <b>{{var balance_total}}</b><br>
+                    <br>
+                    Thank you,<br>
+                    <strong>{{var store.getFrontendName()}}</strong>"
+"<strong>You can use the following variables:</strong><br/>
+                    {{var customer.name}} - customer name<br/>
+                    {{var customer.totalpoints}} - customer total points<br/>
+                    {{store url =""""}} - store URL<br/>
+                    {{var store.getFrontendName()}} - store name<br/>
+                    {{var transaction_amount}} - formatted amount of current transaction (e.g 10 Rewards Points)<br/>
+                    {{var balance_total}} - formatted balance of customer account (e.g. 100 Rewards Points)<br/>
+                    Leave empty to use default notification email.<br/><br/><strong>Example:</strong><br/>
+                    Dear {{var customer.name}},<br>
+                    <p>Your account balance has been updated at <a href=""{{store url=""""}}"">{{var store.getFrontendName()}}</a>. </p>
+                    Balance Update: <b>{{var transaction_amount}}</b><br>
+                    Message: {{var transaction_comment}}<br>
+                    Balance Total: <b>{{var balance_total}}</b><br>
+                    <br>
+                    Thank you,<br>
+                    <strong>{{var store.getFrontendName()}}</strong>","<strong>You can use the following variables:</strong><br/>
+                    {{var customer.name}} - customer name<br/>
+                    {{var customer.totalpoints}} - customer total points<br/>
+                    {{store url =""""}} - store URL<br/>
+                    {{var store.getFrontendName()}} - store name<br/>
+                    {{var transaction_amount}} - formatted amount of current transaction (e.g 10 Rewards Points)<br/>
+                    {{var balance_total}} - formatted balance of customer account (e.g. 100 Rewards Points)<br/>
+                    Leave empty to use default notification email.<br/><br/><strong>Example:</strong><br/>
+                    Dear {{var customer.name}},<br>
+                    <p>Your account balance has been updated at <a href=""{{store url=""""}}"">{{var store.getFrontendName()}}</a>. </p>
+                    Balance Update: <b>{{var transaction_amount}}</b><br>
+                    Message: {{var transaction_comment}}<br>
+                    Balance Total: <b>{{var balance_total}}</b><br>
+                    <br>
+                    Thank you,<br>
+                    <strong>{{var store.getFrontendName()}}</strong>"
+"A description of the rule should include the purpose of the rule, and explain how it is used.","A description of the rule should include the purpose of the rule, and explain how it is used."
+A number that indicates the priority of this rule in relation to others. The highest priority is number 0.,A number that indicates the priority of this rule in relation to others. The highest priority is number 0.
+A total of %1 record(s) have been deleted.,A total of %1 record(s) have been deleted.
+Account Dashboard,Account Dashboard
+Account points is not enough points to cancel the transaction.,Account points is not enough points to cancel the transaction.
+Account points is not enough points to delete the transaction.,Account points is not enough points to delete the transaction.
+Account points is not enough to create a transaction.,Account points is not enough to create a transaction.
+Action,Action
+Actions,Actions
+Active,Active
+Add New Rate,Add New Rate
+Add New Transaction,Add New Transaction
+Add or subtract customer's balance. For ex: 50 or -50 points.,Add or subtract customer's balance. For ex: 50 or -50 points.
+Add Transaction,Add Transaction
+Admin cancel the transaction #%1,Admin cancel the transaction #%1
+Admin delete the transaction #%1,Admin delete the transaction #%1
+Admin User,Admin User
+Allow to earn points from tax,Allow to earn points from tax
+Allow to spend points from shipping fee,Allow to spend points from shipping fee
+Allow to spend points from tax,Allow to spend points from tax
+Apply Code,兑换
+Apply Date must follow Today Date.,Apply Date must follow Today Date.
+Apply Reward Code,兑换
+Approve earned points if order has status,Approve earned points if order has status
+Approve earned points on invoice,Approve earned points on invoice
+Approve earned points on shipment,Approve earned points on shipment
+Are you sure you wan't to delete selected items?,Are you sure you wan't to delete selected items?
+Are you sure you want to do this?,Are you sure you want to do this?
+Attribute Set,Attribute Set
+Available Points,有效会员积分
+available.,可以使用
+Balance Expired Email,Balance Expired Email
+Balance Points,Balance Points
+Balance update,Balance update
+Balance update Email,Balance update Email
+Bug,Bug
+BUGS 1: %1,BUGS 1: %1
+BUGS1: %1,BUGS1: %1
+BUGS2: %1,BUGS2: %1
+BUGS3:' .,BUGS3:' .
+BUGS4:' .,BUGS4:' .
+Bugs5: Total Points is bigger than spend points,Bugs5: Total Points is bigger than spend points
+Buy with %1,Buy with %1
+Cancel,Cancel
+Cancel %1 for the order #%2,Cancel %1 for the order #%2
+Cancel %1 for the order #%2.,Cancel %1 for the order #%2.
+Cancel Earned Points,Cancel Earned Points
+Cancel earned points after order refunding,Cancel earned points after order refunding
+Cancel spent %1 for the order #%2,Cancel spent %1 for the order #%2
+Cancel spent %1 for the order #%2.,Cancel spent %1 for the order #%2.
+Cancel Spent Points,Cancel Spent Points
+Canceled,Canceled
+Changed By Admin,Changed By Admin
+Checkout now and earn <strong>%1</strong> for this order,该订单您可以获取 <strong>%1</strong> 
+Choose how many points to spend,选择您希望使用的的积分
+Choose how many points to spend: ,Choose how many points to spend: 
+Closed,Closed
+Complete,Complete
+Country,Country
+Created,Created
+Created At,Created At
+CSV,CSV
+Customer Email,Customer Email
+Customer Groups,Customer Groups
+Customer Name,Customer Name
+Customer Since,Customer Since
+Customer total points is smaller than avaiable points,Customer total points is smaller than avaiable points
+Data is not valid. Cannot create transaction.,Data is not valid. Cannot create transaction.
+day(s) since the transaction date.,day(s) since the transaction date.
+Delete,Delete
+Delete items,Delete items
+Description,Description
+"Determines if additional rules can be applied to this purchase. To prevent multiple discounts from being applied to the same purchase, select ""Yes.""","Determines if additional rules can be applied to this purchase. To prevent multiple discounts from being applied to the same purchase, select ""Yes."""
+Determines if the rule is currently active in the store.,Determines if the rule is currently active in the store.
+Discount X points for every spent Y,Discount X points for every spent Y
+E.g: 9.8 points generated from an order can be rounded up to 10 points or down to 9 points,E.g: 9.8 points generated from an order can be rounded up to 10 points or down to 9 points
+Earn %1,Earn %1
+Earn %1 for purchasing this product,购买该产品您可以获取 %1
+Earn %1 for purchasing this product.,购买该产品您可以获得 %1 
+Earn Points,Earn Points
+Earn points for purchasing order,Earn points for purchasing order
+Earned %1,Earned %1
+Earned %1 for the order #%2,Earned %1 for the order #%2
+Earned points will be enrolled to your account after we finish processing your order.,所获积分将在订单完成后自动添加至您的会员账户
+Earning Information,Earning Information
+Earning Points,Earning Points
+Earning Points Configuration,Earning Points Configuration
+Earning Points...,Earning Points...
+Earning Rate,Earning Rate
+Earning Rates,Earning Rates
+Edit,Edit
+Edit Rate,Edit Rate
+Edit Rule,Edit Rule
+Edit Rule '%1',Edit Rule '%1'
+Email,Email
+Email Sender,Email Sender
+Empty,Empty
+Enable,Enable
+End,End
+End Date must follow Start Date.,End Date must follow Start Date.
+"Enter your reward code <strong>""%1""</strong> to get %2 in your account dashboard.","Enter your reward code <strong>""%1""</strong> to get %2 in your account dashboard."
+Enter your reward code:,输入积分兑换码:
+Excel XML,Excel XML
+Expire Points Notification,会员积分将要过期提醒
+Expired,Expired
+Expires,过期
+Expires At,Expires At
+Expires Date must follow Apply Date.,Expires Date must follow Apply Date.
+Expires Date must follow Today Date.,Expires Date must follow Today Date.
+Failed,Failed
+For %1 points give %2 discount,For %1 points give %2 discount
+For ex: 10 or -10 points.,For ex: 10 or -10 points.
+From,From
+General,General
+General Configuration,General Configuration
+General Information,General Information
+Give %1 points as orginal price,Give %1 points as orginal price
+Give %1 points for each %2,Give %1 points for each %2
+Give %1 points for every %2 qty,Give %1 points for every %2 qty
+Give %1 points to customer,Give %1 points to customer
+Give %1% points of cart total,Give %1% points of cart total
+Give %1% points of orginal price,Give %1% points of orginal price
+Give X points as product final price,Give X points as product final price
+Give X points for every spent Y,Give X points for every spent Y
+Give X points to customer,Give X points to customer
+Give X% points of orginal price,Give X% points of orginal price
+Group,Group
+Holded,Holded
+How many points customers will receive when the rule is performed.,How many points customers will receive when the rule is performed.
+How to earn points,How to earn points
+How to spend points,怎么使用会员积分？
+ID,ID
+Identifies the customer groups to which the rule applies.,Identifies the customer groups to which the rule applies.
+"If empty or zero, there is no limitation.","If empty or zero, there is no limitation."
+"If empty, the default label 'Point' will be used.","If empty, the default label 'Point' will be used."
+"If empty, the default label 'Points' will be used.","If empty, the default label 'Points' will be used."
+Inactive,Inactive
+Local time: %1 at %2,Local time: %1 at %2
+Mail Log,Mail Log
+Mail Log #%1,Mail Log #%1
+Mail Log Information,Mail Log Information
+Mail Logs,Mail Logs
+Maximum earning points per order,Maximum earning points per order
+Maximum Points Earned,Maximum Points Earned
+Maximum spending points per order,Maximum spending points per order
+Message,Message
+Message for customer notification email,Message for customer notification email
+Money Step (Y),Money Step (Y)
+My Reward,我的会员积分
+My Reward ,My Reward 
+N\A,N\A
+Name,Name
+Name in %1,Name in %1
+New,New
+New Rate,New Rate
+New Rule,New Rule
+No,No
+Normal,Normal
+Notification Settings,提醒设置
+Number Points,Number Points
+Order saving error: %1,Order saving error: %1
+Please select a customer for the transaction,Please select a customer for the transaction
+Point Image,Point Image
+Point Label,Point Label
+Points,Points
+Points (X),Points (X)
+Points Balance,Points Balance
+Points expire,Points expire
+Points expire after,Points expire after
+Points expire Email,Points expire Email
+Points expired,Points expired
+Points Label,Points Label
+Points Spent:,使用会员积分:
+Points Used,Points Used
+"Points will be added to your reward balance after buy product, checkout order.","Points will be added to your reward balance after buy product, checkout order."
+Price,Price
+Priority,Priority
+Processing,Processing
+Product Earning Points,Product Earning Points
+Receipient Email,Receipient Email
+Receipient Name,Receipient Name
+Receive email after balance points balance changed,如果会员积分发生变化请邮件提醒我
+Receive email before points expired,在会员积分失效前请邮件提醒我
+Receive point for +1 via Google,Receive point for +1 via Google
+Receive point for logging in successfully,Receive point for logging in successfully
+Receive point for registering successfully,Receive point for registering successfully
+Receive point for reviewing a product,Receive point for reviewing a product
+Receive point for sharing via Facebook,Receive point for sharing via Facebook
+Receive point for subscribing to newsletter,Receive point for subscribing to newsletter
+Receive points for birthday,Receive points for birthday
+Receive points for Facebook like,Receive points for Facebook like
+Receive points pin via Pinterest,Receive points pin via Pinterest
+Recent Transactions,积分信息
+Recieve point for tweeting via Twitter,Recieve point for tweeting via Twitter
+Recipient Email,Recipient Email
+Recipient Name,Recipient Name
+Redeem Code,积分兑换码
+Retrive points for canceling order,Retrive points for canceling order
+Retrive points for closing order,Retrive points for closing order
+Retrive points for refunding order,Retrive points for refunding order
+Retrive spent points on canceled order,Retrive spent points on canceled order
+Retrive spent points on cloded order,Retrive spent points on cloded order
+Retrive spent points on refunded order,Retrive spent points on refunded order
+Reward Customers,Reward Customers
+Reward Information,Reward Information
+Reward Points,Reward Points
+Reward Policy,Reward Policy
+Reward Policy page,Reward Policy page
+Rewards Discount,Rewards Discount
+Rewards Information,积分信息
+Rounding Down,Rounding Down
+Rounding Method,Rounding Method
+Rounding Up,Rounding Up
+Rule Name,Rule Name
+Save and Continue Edit,Save and Continue Edit
+Save and Duplicate,Save and Duplicate
+Save Code,保存
+Save Product Points,Save Product Points
+Save Rate,Save Rate
+Scheduled At,Scheduled At
+Select a date time to apply this transaction.,Select a date time to apply this transaction.
+Send notification before points expiring (in days),Send notification before points expiring (in days)
+Sender Email,Sender Email
+Sender Name,Sender Name
+Sent At,Sent At
+Set the maximum number of points earned for each product. Leave empty to disable,Set the maximum number of points earned for each product. Leave empty to disable
+"Sets the number of products represented by ""X"".","Sets the number of products represented by ""X""."
+SKU,SKU
+Something went wrong while change product points.,Something went wrong while change product points.
+Something went wrong while changing product points.,Something went wrong while changing product points.
+Something went wrong while duplicating the rate.,Something went wrong while duplicating the rate.
+Something went wrong while saving the rate data. Please review the error log.,Something went wrong while saving the rate data. Please review the error log.
+Spend %1,Spend %1
+Spend Maximum,Spend Maximum
+Spend Minimum,Spend Minimum
+Spend Points,Spend Points
+Spend points to purchase order,Spend points to purchase order
+Spending Information,Spending Information
+Spending Points Configuration,Spending Points Configuration
+Spending Points...,Spending Points...
+Spending Product Points,Spending Product Points
+Spending Rate,Spending Rate
+Spending Rates,Spending Rates
+Spent %1,Spent %1
+Spent %1 for the order #%2,Spent %1 for the order #%2
+Spent Points,使用积分
+Start,Start
+State/Province,State/Province
+Status,Status
+Stop Further Rules Processing,Stop Further Rules Processing
+Stop further rules processing,Stop further rules processing
+Store View,Store View
+Subject,Subject
+Telephone,Telephone
+The mail log has been deleted.,The mail log has been deleted.
+The mail log log no longer exists.,The mail log log no longer exists.
+"The maximum earning points for each order. If empty or zero, there is no limitation","The maximum earning points for each order. If empty or zero, there is no limitation"
+"The maximum spending points for each order. If empty or zero, there is no limitation","The maximum spending points for each order. If empty or zero, there is no limitation"
+The product does not exist.,The product does not exist.
+"The reward code ""%1"" is not valid.","The reward code ""%1"" is not valid."
+The rule has been successfully removed.,The rule has been successfully removed.
+The transaction no longer exists.,The transaction no longer exists.
+The transaction was successfully saved.,The transaction was successfully saved.
+The wrong earning rule is specified.,The wrong earning rule is specified.
+The wrong spending rate is specified.,The wrong spending rate is specified.
+There were %1 customer balance were not enough to create a transaction.,There were %1 customer balance were not enough to create a transaction.
+There were %1 transactions successfully saved.,There were %1 transactions successfully saved.
+This field will be displayed in the list of rules.,This field will be displayed in the list of rules.
+This product can be purchased by points only. Need more points to get it.,This product can be purchased by points only. Need more points to get it.
+This rate no longer exists.,This rate no longer exists.
+Title,Title
+To,To
+Transaction #%1,Transaction #%1
+Transaction has been canceled successfully.,Transaction has been canceled successfully.
+Transaction History,积分记录
+Transaction ID,Transaction ID
+Transaction Information,Transaction Information
+Transaction Title,Transaction Title
+Transaction was successfully saved,Transaction was successfully saved
+Transactions,Transactions
+Transactions History,积分信息
+Trigger,Trigger
+Type,Type
+Update Points Notification,会员积分发生变化提醒
+Updated At,Updated At
+Use,Use
+Use %1,Use %1
+Use Default Value,Use Default Value
+Use maximum ,使用全部
+Use maximum <span>%1</span> %2,Use maximum <span>%1</span> %2
+Use Reward Points,使用会员积分抵现:
+Use Reward Policy page,Use Reward Policy page
+view,view
+View,View
+View All,View All
+View Transaction,View Transaction
+Visibility,Visibility
+We can't find a mail log to delete.,We can't find a mail log to delete.
+We can't find a rate to delete.,We can't find a rate to delete.
+We can't find a transaction to delete.,We can't find a transaction to delete.
+Website,Website
+X points,X points
+Y amount,Y amount
+Yes,Yes
+You can use points to buy product or checkout your purchase at our store.,可以在下笔订单的购物车中直接抵现， 100积分=1欧元，会员积分的有效期为180天
+You created the order.,You created the order.
+You deleted the rate.,You deleted the rate.
+You deleted the transaction.,You deleted the transaction.
+You don't have enough points to buy more quantiy of %1.,You don't have enough points to buy more quantiy of %1.
+You don't have enough points to buy more quantiy.,You don't have enough points to buy more quantiy.
+You duplicated this rate.,You duplicated this rate.
+You Earn,您获得
+You Earned,您已获得
+You earned %1 and spent %2 for the order #%3.,在订单 #%3中您获得了 %1 同时使用了 %2
+You earned %1 for the order #%2,恭喜，该订单 #%2 您将获得 %1
+You earned %1 for the order #%2.,恭喜，该订单 #%2 您将获得 %1。
+You have ,您有
+You have <strong>%1</strong> available.,您目前可使用积分: <strong>%1</strong> 
+"You need to earn more %1 to use this rule. Please click <a href=""%2"">here</a> to learn about it.",目前您没有可以使用的会员积分
+"You need to earn more %1 to use this rule. Please click <a target=""_blank"" href=""%2"">here</a> to learn about it.",目前您没有可以使用的会员积分
+"You s
+                    aved the rate.","You s
+                    aved the rate."
+You saved the rate.,You saved the rate.
+You Spend,使用积分
+You Spent,您已经使用
+You spent %1 for the order #%2,在订单 #%2 中您使用了%1
+You spent %1 for the order #%2.,在订单 #%2 中您使用了%1。
+"You used reward code ""%1"".","您使用兑换积分码 ""%1"""
+You will spend ,您希望使用
+Your balance is %1,您目前可使用的会员积分: %1
+Your balance is <strong>%1</strong>,您目前可使用: <strong>%1</strong>
+Your settings has been updated successfully.,您的设置已经成功
+ZIP,邮编

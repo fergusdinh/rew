@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Landofcoder
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Landofcoder.com license that is
+ * available through the world-wide-web at this URL:
+ * http://landofcoder.com/license
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Landofcoder
+ * @package    Lof_RewardPoints
+ * @copyright  Copyright (c) 2016 Landofcoder (https://landofcoder.com/)
+ * @license    https://landofcoder.com/LICENSE-1.0.html
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" label="Customer My Account (All Pages)" design_abstraction="custom">
+	<body>
+		<attribute name="class" value="account"/>
+		<referenceContainer name="sidebar.main">
+			<block class="Magento\Framework\View\Element\Template" name="customer_account_navigation_block" template="Magento_Theme::html/collapsible.phtml" before="-">
+				<arguments>
+					<argument name="block_title" translate="true" xsi:type="string">Account Dashboard</argument>
+					<argument name="block_css" xsi:type="string">block-collapsible-nav</argument>
+				</arguments>
+				<block class="Magento\Framework\View\Element\Html\Links" name="customer_account_navigation" before="-">
+					<arguments>
+						<argument name="css_class" xsi:type="string">nav items</argument>
+					</arguments>
+					<block class="Magento\Framework\View\Element\Html\Link\Current" name="customer-account-navigation-account-link">
+						<arguments>
+							<argument name="label" xsi:type="string" translate="true">Account Dashboard</argument>
+							<argument name="path" xsi:type="string">customer/account</argument>
+						</arguments>
+					</block>
+					<block class="Lof\RewardPoints\Block\Account\Dashboard\Link\Rewards" name="customer-account-reward-general">
+						<arguments>
+							<argument name="path" xsi:type="string">rewardpoints/</argument>
+							<argument name="label" xsi:type="string">My Reward</argument>
+						</arguments>
+					</block>
+					<block class="Magento\Framework\View\Element\Html\Link\Current" name="customer-account-reward-transactions">
+						<arguments>
+							<argument name="path" xsi:type="string">*/transactions</argument>
+							<argument name="label" xsi:type="string">Transactions History</argument>
+						</arguments>
+					</block>
+					<block class="Lof\RewardPoints\Block\Account\Dashboard\Link\Policy" name="customer-account-reward-policy">
+						<arguments>
+							<argument name="path" xsi:type="string">*/policy</argument>
+							<argument name="label" xsi:type="string">Reward Policy</argument>
+						</arguments>
+					</block>
+					<block class="Magento\Framework\View\Element\Html\Link\Current" name="customer-account-reward-code">
+						<arguments>
+							<argument name="path" xsi:type="string">*/redeemcode</argument>
+							<argument name="label" xsi:type="string">Redeem Code</argument>
+						</arguments>
+					</block>
+					<block class="Magento\Framework\View\Element\Html\Link\Current" name="customer-account-reward-refer">
+						<arguments>
+							<argument name="path" xsi:type="string">*/refer</argument>
+							<argument name="label" xsi:type="string">Referred Friends</argument>
+						</arguments>
+					</block>
+					<block class="Magento\Framework\View\Element\Html\Link\Current" after="-" name="customer-account-reward-settings">
+						<arguments>
+							<argument name="path" xsi:type="string">*/settings</argument>
+							<argument name="label" xsi:type="string">Settings</argument>
+						</arguments>
+					</block>
+				</block>
+			</block>
+		</referenceContainer>
+		<move element="page.main.title" destination="content.top" before="-"/>
+	</body>
+</page>

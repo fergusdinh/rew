@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Landofcoder
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Landofcoder.com license that is
+ * available through the world-wide-web at this URL:
+ * http://landofcoder.com/license
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Landofcoder
+ * @package    Lof_RewardPointsRule
+ * @copyright  Copyright (c) 2020 Landofcoder (http://www.landofcoder.com/)
+ * @license    http://www.landofcoder.com/LICENSE-1.0.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+	<menu>
+		<add id="Lof_RewardPointsRule::earning_catalog_rule" title="Catalog Rules" module="Lof_RewardPointsRule" sortOrder="20" parent="Lof_RewardPoints::earning" action="rewardpointsrule/earning/index/type/product" resource="Lof_RewardPointsRule::catalog_earning_rule"/>
+		<add id="Lof_RewardPointsRule::earning_shoppingcart_rule" title="Shopping Cart Rules" module="Lof_RewardPointsRule" sortOrder="30" parent="Lof_RewardPoints::earning" action="rewardpointsrule/earning/index/type/cart" resource="Lof_RewardPointsRule::cart_earning_rule"/>
+		
+
+		<add id="Lof_RewardPointsRule::spending_catalog_rule" title="Catalog Rules" module="Lof_RewardPointsRule" sortOrder="20" parent="Lof_RewardPoints::spending" action="rewardpointsrule/spending/index/type/product" resource="Lof_RewardPointsRule::catalog_spending_rule"/>
+		<add id="Lof_RewardPointsRule::spending_shoppingcart_rule" title="Shopping Cart Rules" module="Lof_RewardPointsRule" sortOrder="20" parent="Lof_RewardPoints::spending" action="rewardpointsrule/spending/index/type/cart" resource="Lof_RewardPointsRule::cart_spending_rule"/>
+		
+
+		<add id="Lof_RewardPointsRule::convert_data" title="Upgrade Condition Data" module="Lof_RewardPointsRule" sortOrder="60" parent="Lof_RewardPoints::rewardpoints"  resource="Lof_RewardPoints::rewardpoints"/>
+		<add id="Lof_RewardPointsRule::convert_earning_data" title="Convert Earning Conditions to Json" module="Lof_RewardPointsRule" sortOrder="10" parent="Lof_RewardPointsRule::convert_data" action="rewardpointsrule/earning/convertData" resource="Lof_RewardPointsRule::convert_earning_data"/>
+		<add id="Lof_RewardPointsRule::convert_spending_data" title="Convert Spending Conditions to Json" module="Lof_RewardPointsRule" sortOrder="20" parent="Lof_RewardPointsRule::convert_data" action="rewardpointsrule/spending/convertData" resource="Lof_RewardPointsRule::convert_earning_data"/>
+
+	</menu>
+</config>

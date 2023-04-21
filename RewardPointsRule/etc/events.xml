@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Landofcoder
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Landofcoder.com license that is
+ * available through the world-wide-web at this URL:
+ * http://landofcoder.com/license
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Landofcoder
+ * @package    Lof_RewardPointsRule
+ * @copyright  Copyright (c) 2016 Landofcoder (http://www.landofcoder.com/)
+ * @license    http://www.landofcoder.com/LICENSE-1.0.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../lib/internal/Magento/Framework/Event/etc/events.xsd">
+    <event name="rewardpoints_quote_rule">
+        <observer name="lof_rewardpoints_quote_rule" instance="\Lof\RewardPointsRule\Observer\Quote\Rule"/>
+    </event>
+    <event name="rewardpoints_cart_addproduct_complete">
+        <observer name="lof_rewardpoints_cart_addproduct_rule" instance="\Lof\RewardPointsRule\Observer\Quote\Rule"/>
+    </event>
+    <event name="rewardpoints_purchase_refresh_points">
+        <observer name="lof_rewardpoints_purchase_refresh_points" instance="\Lof\RewardPointsRule\Observer\Purchase\RefreshPoints"/>
+    </event>
+    <event name="rewardpoints_purchase_verify_points">
+        <observer name="lof_rewardpoints_purchase_verify_points" instance="\Lof\RewardPointsRule\Observer\Purchase\VerifyPoints"/>
+    </event>
+    <event name="rewardpoints_purchase_refresh_discount">
+        <observer name="lof_rewardpoints_purchase_refresh_discount" instance="\Lof\RewardPointsRule\Observer\Purchase\RefreshDiscount"/>
+    </event>
+    <event name="rewardpoints_item_earning_points">
+        <observer name="lof_rewardpoints_rewardpoints_item_points" instance="\Lof\RewardPointsRule\Observer\Checkout\ItemEarningPoints"/>
+    </event>
+    <event name="rewardpoints_reset_earning_points">
+        <observer name="lof_rewardpoints_rewardpoints_item_points" instance="\Lof\RewardPointsRule\Observer\ResetEarningPoints"/>
+    </event>
+    <event name="rewardpoints_add_to_cart">
+        <observer name="lof_rewardpoints_add_to_cart" instance="\Lof\RewardPointsRule\Observer\AddToCart"/>
+    </event>
+</config>

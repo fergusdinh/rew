@@ -1,0 +1,28 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/* @var $block \Magento\Wishlist\Block\Link */
+?>
+<li class="link lrw-toplink" data-bind="scope: 'rewardpoints'">
+    <a <?php /* @escapeNotVerified */ echo $block->getLinkAttributes() ?>><span><?php echo $block->escapeHtml($block->getLabel()) ?></span>
+        <span data-bind="html: rewardpoints().totalpoints" class="lrw-totalpoints"></span>
+    </a>
+</li>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "rewardpoints": {
+                        "component": "Lof_RewardPoints/js/view/rewards"
+                    }
+                }
+            }
+        }
+    }
+</script>

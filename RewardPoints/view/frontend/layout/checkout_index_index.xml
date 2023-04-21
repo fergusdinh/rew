@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Landofcoder
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Landofcoder.com license that is
+ * available through the world-wide-web at this URL:
+ * http://landofcoder.com/license
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category   Landofcoder
+ * @package    Lof_RewardPoints
+ * @copyright  Copyright (c) 2016 Landofcoder (https://landofcoder.com/)
+ * @license    https://landofcoder.com/LICENSE-1.0.html
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="sidebar" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="summary" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="totals" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="earn_points" xsi:type="array">
+                                                            <item name="sortOrder" xsi:type="string">30</item>
+                                                            <item name="component"  xsi:type="string">Lof_RewardPoints/js/view/cart/earn_points</item>
+                                                            <item name="config" xsi:type="array">
+                                                                <item name="title" xsi:type="string" translate="true">You Earn</item>
+                                                            </item>
+                                                        </item>
+                                                        <item name="spend_points" xsi:type="array">
+                                                            <item name="sortOrder" xsi:type="string">31</item>
+                                                            <item name="config" xsi:type="array">
+                                                                <item name="title" xsi:type="string" translate="true">You Spend</item>
+                                                            </item>
+                                                        </item>
+                                                        <item name="used_points" xsi:type="array">
+                                                            <item name="sortOrder" xsi:type="string">32</item>
+                                                            <item name="component"  xsi:type="string">Lof_RewardPoints/js/view/cart/used_points</item>
+                                                            <item name="config" xsi:type="array">
+                                                                <item name="title" xsi:type="string" translate="true">Use</item>
+                                                            </item>
+                                                        </item>
+                                                        <item name="use_points" xsi:type="array">
+                                                            <item name="sortOrder" xsi:type="string">99</item>
+                                                            <item name="component"  xsi:type="string">Lof_RewardPoints/js/view/cart/use_rewardpoints</item>
+                                                            <item name="config" xsi:type="array">
+                                                                <item name="title" xsi:type="string" translate="true">Use</item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

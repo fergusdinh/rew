@@ -1,0 +1,19 @@
+<div class="lrw-social-buttons">
+
+	<?php echo $block->getChildHtml('facebook.like'); ?>
+
+	<?php echo $block->getChildHtml('facebook.share'); ?>
+
+	<?php echo $block->getChildHtml('twitter.tweet'); ?>
+
+	<?php echo $block->getChildHtml('googleplus.like'); ?>
+
+	<?php echo $block->getChildHtml('pinterest.pin'); ?>
+
+</div>
+
+<script>
+	var productId               = '<?php echo $block->getCurrentProduct()->getId() ?>';
+	var rewardsEncodeCurrentUrl = '<?php echo $block->getCurrentEncodedUrl($block->getCurrentUrl()); ?>';
+	var rewardsCurrentUrl       = '<?php echo $block->getCurrentUrl(); ?>';
+</script>
